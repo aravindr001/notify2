@@ -3,7 +3,9 @@
 // import 'package:best_flutter_ui_templates/hotel_booking/hotel_home_screen.dart';
 // import 'package:best_flutter_ui_templates/introduction_animation/introduction_animation_screen.dart';
 import 'package:flutter/widgets.dart';
+import 'package:notify2/pages/chatNoti.dart';
 import 'package:notify2/pages/chat_screen.dart';
+import 'package:notify2/pages/pdf_screen.dart';
 
 class HomeList {
   HomeList({
@@ -19,25 +21,25 @@ class HomeList {
   static List<HomeList> homeList = [
     HomeList(
         imagePath: 'assets/images/homescreen/pdftotext.jpg',
-        name: 'Chat with Noti'
-        // navigateScreen: HotelHomeScreen(),
+        name: 'Chat with Noti',
+        navigateScreen: NotiScreen(),
         ),
-    HomeList(
-      imagePath: 'assets/images/homescreen/imagetotext.jpg',
-      name : 'AI Image to text'
-      // navigateScreen: IntroductionAnimationScreen(),
-      // navigateScreen: IntroductionAnimationScreen(),
-    ),
+    // HomeList(
+    //   imagePath: 'assets/images/homescreen/imagetotext.jpg',
+    //   name : 'AI Image to text'
+    //   // navigateScreen: IntroductionAnimationScreen(),
+    //   // navigateScreen: IntroductionAnimationScreen(),
+    // ),
     HomeList(
       imagePath: 'assets/images/homescreen/pdftotext.jpg',
-      name : 'AI pdf to text converter'
-      // navigateScreen: HotelHomeScreen(),
+      name : 'AI pdf summarizer',
+      navigateScreen: PdfScreen(),
     ),
-    HomeList(
-      imagePath: 'assets/images/homescreen/audiotranscriber.jpg',
-      name : 'AI Audio transcriber'
-      // navigateScreen: FitnessAppHomeScreen(),
-    ),
+    // HomeList(
+    //   imagePath: 'assets/images/homescreen/audiotranscriber.jpg',
+    //   name : 'AI Audio transcriber'
+    //   // navigateScreen: FitnessAppHomeScreen(),
+    // ),
     HomeList(
       imagePath: 'assets/images/homescreen/chats.jpg',
       name : 'AI Chat',

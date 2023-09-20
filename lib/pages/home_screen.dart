@@ -66,9 +66,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 height: 900,
                 color: Colors.amber,
                 child: ListView.separated(
-                    itemBuilder: (context, index) => Boxes(
-                          title: homeList[index].name,
-                        ),
+                    itemBuilder: (context, index) => InkWell(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => homeList[index].navigateScreen!,)),
+                      child: Boxes(
+                            title: homeList[index].name,
+                          ),
+                    ),
                     separatorBuilder: (context, index) => const SizedBox(),
                     itemCount: homeList.length)),
           )
@@ -152,28 +155,25 @@ class Boxes extends StatelessWidget {
   // Widget path;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      // onTap: () => Navigator.of(context).push(path),
-      child: Padding(
-          padding: const EdgeInsets.only(top: 20.0, left: 20, right: 20),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Container(
-              height: 150,
-              color: Colors.deepPurple[300],
-              child: Center(
-                  child: Padding(
-                padding: const EdgeInsets.all(18.0),
-                child:
-                    Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-                  Text(
-                    title,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                  )
-                ]),
-              )),
-            ),
-          )),
-    );
+    return Padding(
+        padding: const EdgeInsets.only(top: 20.0, left: 20, right: 20),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Container(
+            height: 150,
+            color: Colors.deepPurple[300],
+            child: Center(
+                child: Padding(
+              padding: const EdgeInsets.all(18.0),
+              child:
+                  Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                )
+              ]),
+            )),
+          ),
+        ));
   }
 }
