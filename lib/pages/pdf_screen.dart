@@ -84,7 +84,7 @@ class _PdfScreenState extends State<PdfScreen> {
                         if (snapshot.hasData) {
                           return Text(snapshot.data.toString());
                         } else if (snapshot.hasError) {
-                          return Text('');
+                          return const Text('');
                         }
                         return const Loading();
                       },
