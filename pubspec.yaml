@@ -30,6 +30,7 @@ environment:
 dependencies:
   build_runner: ^2.4.6
   cupertino_icons: ^1.0.2
+  file_picker: ^5.5.0
   flutter:
     sdk: flutter
   flutter_local_notifications: ^15.1.1
@@ -39,6 +40,8 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   permission_handler: ^11.0.0
+  read_pdf_text: ^0.2.1
+  syncfusion_flutter_pdfviewer: ^23.1.36
 
 dev_dependencies:
   flutter_lints: ^2.0.0
