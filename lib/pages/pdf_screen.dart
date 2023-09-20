@@ -93,19 +93,6 @@ class _PdfScreenState extends State<PdfScreen> {
               ],
             ),
 
-      // body: (result!=null)? FutureBuilder<String>(
-      //   future: getPDFtext(pickedFile!.path.toString()),
-      //   builder: (context, snapshot) {
-      //     if (snapshot.hasData) {
-      //       return Text(snapshot.data.toString());
-      //     } else if (snapshot.hasError) {
-      //       return Text('');
-      //     }
-      //     return const Loading();
-      //   },
-      // ):
-      // CircularProgressIndicator(),
-
       floatingActionButton: FloatingActionButton(
         onPressed: pickFile,
         child: const Icon(Icons.add),
