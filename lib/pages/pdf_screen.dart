@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -66,22 +65,31 @@ class _PdfScreenState extends State<PdfScreen> {
           : Column(
               children: [
                 if (result == null)
-                  Expanded(child: Center(
+                  const Expanded(
+                      child: Center(
                     child: Text(
                       'Click the icon below and add select a pdf file\n to summerise',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20
-                      ),
+                      style: TextStyle(fontSize: 20),
                     ),
                   )),
                 if (result != null)
                   Expanded(
-                    child: 
-                      // child: Image.file(fileToDisplay!),
-                      SfPdfViewer.file(fileToDisplay!),
-                      // child: Text( getPDFtext(pickedFile!.path.toString())),
-                    ), 
+                    child:
+                        // child: Image.file(fileToDisplay!),
+                        // SfPdfViewer.file(fileToDisplay!),
+                        FutureBuilder<String>(
+                      future: getPDFtext(pickedFile!.path.toString()),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(snapshot.data.toString());
+                        } else if (snapshot.hasError) {
+                          return Text('');
+                        }
+                        return const Loading();
+                      },
+                    ),
+                  ),
               ],
             ),
 
@@ -91,7 +99,7 @@ class _PdfScreenState extends State<PdfScreen> {
       //     if (snapshot.hasData) {
       //       return Text(snapshot.data.toString());
       //     } else if (snapshot.hasError) {
-      //       return Text('hai');
+      //       return Text('');
       //     }
       //     return const Loading();
       //   },
