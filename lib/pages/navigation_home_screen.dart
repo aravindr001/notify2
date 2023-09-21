@@ -2,6 +2,7 @@ import 'package:notify2/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:notify2/custom_drawer/drawer_user_controller.dart';
 import 'package:notify2/custom_drawer/home_drawer.dart';
+import 'package:notify2/pages/about_screen.dart';
 import 'package:notify2/pages/home_screen.dart';
 import 'package:notify2/pages/keyword_screen.dart';
 // import 'package:notify/feedback_screen.dart';
@@ -54,24 +55,19 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       switch (drawerIndex) {
         case DrawerIndex.HOME:
           setState(() {
-            // screenView = const MyHomePage();
+            screenView = const MyHomePage();
           });
           break;
-        // case DrawerIndex.Help:
-        //   setState(() {
-        //     // screenView = HelpScreen();
-        //   });
-        //   break;
         case DrawerIndex.Synonyms:
           setState(() {
             screenView = KeyScreen();
           });
           break;
-        // case DrawerIndex.Invite:
-        //   setState(() {
-        //     // screenView = InviteFriend();
-        //   });
-          // break;
+        case DrawerIndex.About:
+          setState(() {
+            screenView = AboutScreen();
+          });
+          break;
         default:
           break;
       }

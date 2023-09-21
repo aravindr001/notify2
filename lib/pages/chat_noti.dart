@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:notify2/pages/home_screen.dart';
 import 'package:notify2/providers/chats_provider.dart';
+import 'package:notify2/widgets/backwidget.dart';
 import 'package:notify2/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -44,9 +45,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final chatProvider = Provider.of<ChatProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(color: Colors.black,icon: const Icon(Icons.arrow_back_ios_new),onPressed: (){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyHomePage(),));
-        },),
+        leading: const Back(),
         backgroundColor: const Color.fromARGB(215, 239, 239, 239),
         elevation: 0,
         centerTitle: true,
@@ -190,3 +189,5 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 }
+
+

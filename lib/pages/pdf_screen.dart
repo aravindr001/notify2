@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:notify2/model/chat_model.dart';
 import 'package:notify2/constants/api_consts.dart';
+import 'package:notify2/widgets/backwidget.dart';
 import 'package:read_pdf_text/read_pdf_text.dart';
 import 'package:http/http.dart' as http;
 
@@ -37,13 +38,9 @@ class _PdfScreenState extends State<PdfScreen> {
       setState(() {
         isLoading = true;
       });
-      // String initialDirectory =
-      //     await FilePicker.getPlatform().getDirectoryPath();
 
-      // String initialDirectory = await FilePicker.platform.pickFiles().toString();
-      // print('${initialDirectory.characters} initialDirectory');
       result = await FilePicker.platform.pickFiles(
-        // allowedExtensions: ['pdf']
+
       );
 
       if (result != null) {
@@ -66,48 +63,53 @@ class _PdfScreenState extends State<PdfScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          title: const Text(
-        'AI PDF SUMMARIZER',
-        style: TextStyle(fontSize: 19, letterSpacing: 3),
-      )),
-      body: isLoading
-          ? const Loading()
-          : Column(
-              children: [
-                if (result == null)
-                  const Expanded(
-                      child: Center(
-                    child: Text(
-                      'Click the icon below and add select a pdf file\n to summerise',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 20),
+    return MaterialApp(
+      theme: ThemeData(useMaterial3: true),
+      home: Scaffold(
+        appBar: AppBar(
+          leading: Back(),
+          centerTitle: true,
+            title: const Text(
+          'AI PDF SUMMARIZER',
+          style: TextStyle(fontSize: 19, letterSpacing: 3),
+        )),
+        body: isLoading
+            ? const Loading()
+            : Column(
+                children: [
+                  if (result == null)
+                    const Expanded(
+                        child: Center(
+                      child: Text(
+                        'Click the icon below and add select a pdf file\n to summerise',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    )),
+                  if (result != null)
+                    Expanded(
+                      child:
+                          // child: Image.file(fileToDisplay!),
+                          // SfPdfViewer.file(fileToDisplay!),
+                          FutureBuilder<String>(
+                        future: getPDFtext(pickedFile!.path.toString()),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            return Text(snapshot.data.toString());
+                          } else if (snapshot.hasError) {
+                            return Text('');
+                          }
+                          return const Loading();
+                        },
+                      ),
                     ),
-                  )),
-                if (result != null)
-                  Expanded(
-                    child:
-                        // child: Image.file(fileToDisplay!),
-                        // SfPdfViewer.file(fileToDisplay!),
-                        FutureBuilder<String>(
-                      future: getPDFtext(pickedFile!.path.toString()),
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          return Text(snapshot.data.toString());
-                        } else if (snapshot.hasError) {
-                          return Text('');
-                        }
-                        return const Loading();
-                      },
-                    ),
-                  ),
-              ],
-            ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: pickFile,
-        child: const Icon(Icons.add),
+                ],
+              ),
+    
+        floatingActionButton: FloatingActionButton(
+          onPressed: pickFile,
+          child: const Icon(Icons.add),
+        ),
       ),
     );
   }

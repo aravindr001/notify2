@@ -178,9 +178,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                                    AppBar().preferredSize.height),
                               child: Center(
                                 // if you use your own menu view UI you add form initialization
-                                child: widget.menuView != null
-                                    ? widget.menuView
-                                    : AnimatedIcon(
+                                child: widget.menuView ?? AnimatedIcon(
                                         color: AppTheme.dark_grey,
                                         icon: widget.animatedIconData ??
                                             AnimatedIcons.arrow_menu,
