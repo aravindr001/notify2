@@ -43,6 +43,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   http: ^1.1.0
+  lottie: ^2.6.0
   permission_handler: ^11.0.0
   provider: ^6.0.5
   read_pdf_text: ^0.2.1
@@ -67,6 +68,7 @@ flutter:
     - assets/images/logo.png
     - assets/images/homescreen/
     - assets/images/
+    - assets/animation/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

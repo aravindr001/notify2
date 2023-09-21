@@ -6,6 +6,7 @@ import 'dart:developer';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lottie/lottie.dart';
 import 'package:notify2/model/chat_model.dart';
 import 'package:notify2/constants/api_consts.dart';
 import 'package:notify2/widgets/backwidget.dart';
@@ -125,8 +126,8 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(),
+    return Center(
+      child: LottieBuilder.asset('assets/animation/Animation - 1695312393349.json')
     );
   }
 }
