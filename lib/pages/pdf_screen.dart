@@ -9,7 +9,6 @@ import 'package:flutter/services.dart';
 import 'package:notify2/model/chat_model.dart';
 import 'package:notify2/constants/api_consts.dart';
 import 'package:read_pdf_text/read_pdf_text.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:http/http.dart' as http;
 
 class PdfScreen extends StatefulWidget {

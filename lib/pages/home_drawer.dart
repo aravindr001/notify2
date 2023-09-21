@@ -31,33 +31,18 @@ class _HomeDrawerState extends State<HomeDrawer> {
       DrawerList(
         index: DrawerIndex.HOME,
         labelName: 'Home',
-        icon: Icon(Icons.home),
+        icon: const Icon(Icons.home),
       ),
       DrawerList(
-        index: DrawerIndex.Help,
-        labelName: 'Help',
+        index: DrawerIndex.Synonyms,
+        labelName: 'Synonyms',
         isAssetsImage: true,
         imageName: 'assets/images/supportIcon.png',
       ),
-      // DrawerList(
-      //   index: DrawerIndex.FeedBack,
-      //   labelName: 'FeedBack',
-      //   icon: Icon(Icons.help),
-      // ),
-      // DrawerList(
-      //   index: DrawerIndex.Invite,
-      //   labelName: 'Invite Friend',
-      //   icon: Icon(Icons.group),
-      // ),
-      // DrawerList(
-      //   index: DrawerIndex.Share,
-      //   labelName: 'Rate the app',
-      //   icon: Icon(Icons.share),
-      // ),
       DrawerList(
         index: DrawerIndex.About,
         labelName: 'About Us',
-        icon: Icon(Icons.info),
+        icon: const Icon(Icons.info),
       ),
     ];
   }
@@ -297,12 +282,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
 enum DrawerIndex {
   HOME,
-  FeedBack,
-  Help,
-  Share,
+  Synonyms,
   About,
-  Invite,
-  Testing,
 }
 
 class DrawerList {

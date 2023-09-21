@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:notify2/pages/home_screen.dart';
 import 'package:notify2/providers/chats_provider.dart';
 import 'package:notify2/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
@@ -46,20 +47,19 @@ class _ChatScreenState extends State<ChatScreen> {
     final chatProvider = Provider.of<ChatProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        elevation: 2,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset(AssetsManager.notifyLogo),
+        leading: IconButton(color: Colors.black,icon: const Icon(Icons.arrow_back_ios_new),onPressed: (){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyHomePage(),));
+        },),
+        backgroundColor: const Color.fromARGB(215, 239, 239, 239),
+        elevation: 0,
+        centerTitle: true,
+        title: const Text("Notify",
+        style: TextStyle(
+          color: Colors.black,
+          letterSpacing: 6
         ),
-        title: const Text("Notify"),
-        // actions: [
-        //   IconButton(
-        //     onPressed: () async {
-        //       await Services.showModalSheet(context: context);
-        //     },
-        //     icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
-        //   ),
-        // ],
+
+        ),
       ),
       body: SafeArea(
         child: Column(
@@ -81,7 +81,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             if (_isTyping) ...[
               const SpinKitThreeBounce(
-                color: Colors.white,
+                color: Colors.purpleAccent,
                 size: 18,
               ),
             ],
@@ -89,7 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
               height: 15,
             ),
             Material(
-              color: cardColor,
+              // color: cardColor,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -106,7 +106,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         },
                         decoration: const InputDecoration.collapsed(
                             hintText: "How can I help you",
-                            hintStyle: TextStyle(color: Colors.grey)),
+                            hintStyle: TextStyle(color: Color.fromARGB(255, 121, 121, 121))),
                       ),
                     ),
                     IconButton(
@@ -117,7 +117,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         },
                         icon: const Icon(
                           Icons.send,
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 57, 57, 57),
                         ))
                   ],
                 ),

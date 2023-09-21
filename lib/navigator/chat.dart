@@ -24,9 +24,9 @@ class ChatBot extends StatelessWidget {
         title: 'Flutter ChatBOT',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            scaffoldBackgroundColor: scaffoldBackgroundColor,
+            // scaffoldBackgroundColor: scaffoldBackgroundColor,
             appBarTheme: AppBarTheme(
-              color: cardColor,
+              // color: cardColor,
             )),
         home: const ChatScreen(),
       ),
