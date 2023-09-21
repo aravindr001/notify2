@@ -147,30 +147,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             height: AppBar().preferredSize.height,
             width: AppBar().preferredSize.height - 8,
           )
-          // Padding(
-          //   padding: const EdgeInsets.only(top: 8, right: 8),
-          //   child: Container(
-          //     width: AppBar().preferredSize.height - 8,
-          //     height: AppBar().preferredSize.height - 8,
-          //     color: AppTheme.white,
-          //     child: Material(
-          //       color: Colors.transparent,
-          //       child: InkWell(
-          //         borderRadius:
-          //             BorderRadius.circular(AppBar().preferredSize.height),
-          //         child: Icon(
-          //           multiple ? Icons.dashboard : Icons.view_agenda,
-          //           color: isLightMode ? AppTheme.dark_grey : AppTheme.white,
-          //         ),
-          //         onTap: () {
-          //           setState(() {
-          //             multiple = !multiple;
-          //           });
-          //         },
-          //       ),
-          //     ),
-          //   ),
-          // ),
+        
         ],
       ),
     );
@@ -202,7 +179,6 @@ class HomeListView extends StatelessWidget {
             transform: Matrix4.translationValues(
                 0.0, 50 * (1.0 - animation!.value), 0.0),
             child: Stack(
-
               alignment: AlignmentDirectional.center,
               children: <Widget>[
                 ClipRRect(

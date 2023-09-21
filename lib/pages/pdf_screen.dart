@@ -67,7 +67,7 @@ class _PdfScreenState extends State<PdfScreen> {
       theme: ThemeData(useMaterial3: true),
       home: Scaffold(
         appBar: AppBar(
-          leading: Back(),
+          leading: const Back(),
           centerTitle: true,
             title: const Text(
           'AI PDF SUMMARIZER',

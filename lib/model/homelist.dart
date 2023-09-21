@@ -16,18 +16,18 @@ class HomeList {
 
   static List<HomeList> homeList = [
     HomeList(
-        imagePath: 'assets/images/homescreen/aipdfassist.png',
-        name: 'AI PDF ASSIST',
+      imagePath: 'assets/images/homescreen/noti.png',
+      name : 'NOTI',
       navigateScreen: ChatBot(),
         ),
     HomeList(
-      imagePath: 'assets/images/homescreen/chatnotify.png',
-      name : 'CHAT NOTIFY',
+        imagePath: 'assets/images/homescreen/aipdfassist.png',
+        name: 'AI PDF ASSIST',
       navigateScreen: PdfScreen(),
     ),
     HomeList(
-      imagePath: 'assets/images/homescreen/noti.png',
-      name : 'NOTI',
+      imagePath: 'assets/images/homescreen/chatnotify.png',
+      name : 'CHAT NOTIFY',
       navigateScreen: ChatsScreen(),
     ),
   ];
