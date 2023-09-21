@@ -94,7 +94,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     Expanded(
                       child: TextField(
                         focusNode: focusNode,
-                        style: const TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Color.fromARGB(255, 3, 3, 3)),
                         controller: textEditingController,
                         onSubmitted: (value) async {
                           await sendMessageFCT(

@@ -60,7 +60,7 @@ class ChatWidget extends StatelessWidget {
                           : Text(
                               msg.trim(),
                               style: const TextStyle(
-                                  color: Colors.white,
+                                  color: Color.fromARGB(255, 97, 96, 96),
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16),
                             ),

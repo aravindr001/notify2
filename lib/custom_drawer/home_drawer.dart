@@ -1,5 +1,7 @@
+import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:notify2/app_theme.dart';
 
 class HomeDrawer extends StatefulWidget {
@@ -31,45 +33,27 @@ class _HomeDrawerState extends State<HomeDrawer> {
       DrawerList(
         index: DrawerIndex.HOME,
         labelName: 'Home',
-        icon: Icon(Icons.home),
+        icon: const Icon(Icons.home),
       ),
       DrawerList(
         index: DrawerIndex.Synonyms,
         labelName: 'Synonyms',
-        icon: Icon(Icons.notification_important_outlined),
-
-        // isAssetsImage: true,
-        // imageName: 'assets/images/supportIcon.png',
+        icon: const Icon(Icons.notification_important_outlined),
       ),
-      // DrawerList(
-      //   index: DrawerIndex.Synonyms,
-      //   labelName: 'FeedBack',
-      //   icon: Icon(Icons.help),
-      // ),
-      // DrawerList(
-      //   index: DrawerIndex.Invite,
-      //   labelName: 'Invite Friend',
-      //   icon: Icon(Icons.group),
-      // ),
-      // DrawerList(
-      //   index: DrawerIndex.Share,
-      //   labelName: 'Rate the app',
-      //   icon: Icon(Icons.share),
-      // ),
       DrawerList(
         index: DrawerIndex.About,
         labelName: 'About Us',
-        icon: Icon(Icons.info),
+        icon: const Icon(Icons.info),
       ),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isLightMode = brightness == Brightness.light;
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -120,7 +104,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                       );
                     },
                   ),
-                  Padding(
+                  const Padding(
                     padding: const EdgeInsets.only(top: 8, left: 4),
                     child: Text(
                       'N O T I F Y  .  A I',
@@ -163,8 +147,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   Icons.power_settings_new,
                   color: Colors.red,
                 ),
-                onTap: () {
-                  onTapped();
+                onTap: (){
+                  SystemNavigator.pop();
                 },
               ),
               SizedBox(
@@ -177,13 +161,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
     );
   }
 
-  void onTapped() {
-    print('Doing Something...'); // Print to console.
-  }
+  
 
   Widget inkwell(DrawerList listData) {
     return Material(
-      color: Colors.transparent,
+      color: const Color.fromRGBO(0, 0, 0, 0),
       child: InkWell(
         splashColor: Colors.grey.withOpacity(0.1),
         highlightColor: Colors.transparent,
