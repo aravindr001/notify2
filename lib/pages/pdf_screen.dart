@@ -11,6 +11,9 @@ import 'package:notify2/constants/api_consts.dart';
 import 'package:read_pdf_text/read_pdf_text.dart';
 import 'package:http/http.dart' as http;
 
+String currentModel = "ft:gpt-3.5-turbo-0613:personal::81CJDQxQ";
+
+
 class PdfScreen extends StatefulWidget {
   PdfScreen({super.key});
 
@@ -133,7 +136,6 @@ Future<String> getPDFtext(String path) async {
 
   try {
     text = await ReadPdfText.getPDFtext(path);
-    String currentModel = "ft:gpt-3.5-turbo-0613:personal::80K3UOD5";
 
     chat = await sendMessageGPT(message: text, modelId: currentModel);
   } on PlatformException {

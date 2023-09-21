@@ -4,11 +4,8 @@ import 'package:notify2/providers/chats_provider.dart';
 import 'package:notify2/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:notify2/constants/constants.dart';
 import 'package:provider/provider.dart';
-
 import '../providers/models_provider.dart';
-import '../services/assets_manager.dart';
 import '../widgets/text_widget.dart';
 
 class ChatScreen extends StatefulWidget {

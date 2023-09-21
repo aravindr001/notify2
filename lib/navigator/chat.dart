@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notify2/constants/constants.dart';
 import 'package:notify2/pages/chat_noti.dart';
 import 'package:notify2/providers/chats_provider.dart';
 import 'package:notify2/providers/models_provider.dart';

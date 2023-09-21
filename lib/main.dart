@@ -3,7 +3,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:notify2/app_theme.dart';
 import 'package:notify2/boxes.dart';
 import 'package:notify2/model/notification.dart';
 import 'package:notify2/navigation_home_screen.dart';
@@ -46,7 +45,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        textTheme: AppTheme.textTheme,
+        // textTheme: GoogleFonts.,
         platform: TargetPlatform.iOS,
         useMaterial3: true
       ),

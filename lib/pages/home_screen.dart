@@ -34,10 +34,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    // var brightness = MediaQuery.of(context).platformBrightness;
-    // bool isLightMode = brightness == Brightness.light;
     return Scaffold(
-      backgroundColor:AppTheme.white,
+      backgroundColor: AppTheme.white,
       body: FutureBuilder<bool>(
         future: getData(),
         builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
@@ -138,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   style: TextStyle(
                     letterSpacing: 8,
                     fontSize: 22,
-                    color:  AppTheme.nearlyBlack,
+                    color: AppTheme.nearlyBlack,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -147,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
           SizedBox(
             height: AppBar().preferredSize.height,
-            width: AppBar().preferredSize.height -8,
+            width: AppBar().preferredSize.height - 8,
           )
           // Padding(
           //   padding: const EdgeInsets.only(top: 8, right: 8),
@@ -203,31 +201,42 @@ class HomeListView extends StatelessWidget {
           child: Transform(
             transform: Matrix4.translationValues(
                 0.0, 50 * (1.0 - animation!.value), 0.0),
-            child: AspectRatio(
-              aspectRatio: 1.5,
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(4.0)),
-                child: Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: <Widget>[
-                    Positioned.fill(
-                      child: Image.asset(
-                        listData!.imagePath,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        splashColor: Colors.grey.withOpacity(0.2),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(4.0)),
-                        onTap: callBack,
-                      ),
-                    ),
-                  ],
+            child: Stack(
+
+              alignment: AlignmentDirectional.center,
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(18.0)),
+                  child: Container(
+                    height: 170,
+                    width: 265,
+                    decoration: const BoxDecoration(color: Color.fromARGB(255, 234, 176, 242)),
+                  ),
                 ),
-              ),
+                Positioned(
+                  bottom: 35, 
+                  child: Image.asset(
+                    listData!.imagePath,
+                    fit: BoxFit.cover,
+                    height: 110,
+                  ),
+                ),
+                Positioned(
+                  top: 55,
+                  child: Text(
+                    listData!.name,
+                    style: const TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.black),
+                  ),
+                ),
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    splashColor: Colors.grey.withOpacity(0.2),
+                    borderRadius: const BorderRadius.all(Radius.circular(4.0)),
+                    onTap: callBack,
+                  ),
+                ),
+              ],
             ),
           ),
         );
