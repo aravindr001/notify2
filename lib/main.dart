@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:notify2/boxes.dart';
 import 'package:notify2/model/notification.dart';
-import 'package:notify2/navigation_home_screen.dart';
+import 'package:notify2/pages/navigation_home_screen.dart';
 
 import 'package:permission_handler/permission_handler.dart';
 

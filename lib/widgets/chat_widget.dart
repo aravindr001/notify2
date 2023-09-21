@@ -28,7 +28,7 @@ class ChatWidget extends StatelessWidget {
                 Image.asset(
                   chatIndex == 0
                       ? AssetsManager.userImage
-                      : AssetsManager.botImage,
+                      : AssetsManager.notifyLogo,
                   height: 30,
                   width: 30,
                 ),
@@ -43,7 +43,7 @@ class ChatWidget extends StatelessWidget {
                       : shouldAnimate
                           ? DefaultTextStyle(
                               style: const TextStyle(
-                                  color: Colors.white,
+                                  color: Color.fromARGB(255, 8, 6, 6),
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16),
                               child: AnimatedTextKit(
