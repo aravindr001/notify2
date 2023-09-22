@@ -1,6 +1,14 @@
+import 'dart:isolate';
+import 'dart:ui';
+
+import 'package:flutter_notification_listener/flutter_notification_listener.dart';
 import 'package:notify2/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:notify2/boxes.dart';
 import 'package:notify2/model/homelist.dart';
+import 'package:notify2/model/notification.dart';
+import 'package:notify2/pages/chat_screen.dart';
+import 'package:notify2/services/local_notification.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -18,8 +26,114 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   void initState() {
     animationController = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
+        LocalNotification.initialize(flutterLocalNotificationsPlugin);
+    initPlatformState();
     super.initState();
   }
+  static void _callback(NotificationEvent evt) {
+    // HANDLING BACKGROUND NOTIFICATIONS :
+    print('GETTING INFO ');
+    print(evt.packageName); // PACKAGE USE TO SEND MESSAGE :
+    print(evt.text); // MESSAGE CONTENT  :
+    print(evt.title);
+
+    final SendPort? send = IsolateNameServer.lookupPortByName("_listener_");
+    if (send == null) print("can't find the sender");
+    send?.send(evt);
+  }
+
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initPlatformState() async {
+    NotificationsListener.initialize(callbackHandle: _callback);
+
+    // this can fix restart<debug> can't handle error
+    IsolateNameServer.removePortNameMapping("_listener_");
+    IsolateNameServer.registerPortWithName(port.sendPort, "_listener_");
+    port.listen((message) => onData(message));
+
+    // don't use the default receivePort
+    // NotificationsListener.receivePort.listen((evt) => onData(evt));
+
+    bool? isR = await NotificationsListener.isRunning;
+    print("""Service is ${isR == false ? "not " : ""}aleary running""");
+
+    setState(() {
+      started.value = isR!;
+    });
+  }
+
+  void onData(NotificationEvent event) {
+    setState(() {
+      if (event.packageName!.contains('com.whatsapp') &&
+          event.title != 'WhatsApp') {
+        NotificationDataModel noti = NotificationDataModel(
+            title: event.title.toString(),
+            text: event.text.toString(),
+            packageName: event.packageName.toString(),
+            createAt: event.createAt.toString());
+
+        notifications.add(noti);
+
+        for (var element in keywords.values) {
+          print('elements $element');
+          if (event.text!.contains(element)) {
+            print('alert');
+            LocalNotification.showBigTextNotification(
+                title: "${event.title}",
+                body: "mentioned $element in their message",
+                flutterLocalNotificationsPlugin:
+                    flutterLocalNotificationsPlugin);
+          }
+        }
+      }
+    });
+    if (!event.packageName!.contains("example")) {
+      // TODO: fix bug
+      // NotificationsListener.promoteToForeground("");
+    }
+  }
+
+  void startListening() async {
+    print("start listening");
+    setState(() {
+      loading.value = true;
+    });
+
+    bool? hasPermission = await NotificationsListener.hasPermission;
+    if (hasPermission == false) {
+      print("no permission, so open settings");
+      NotificationsListener.openPermissionSettings();
+      return;
+    }
+
+    bool? isR = await NotificationsListener.isRunning;
+
+    if (isR == false) {
+      await NotificationsListener.startService(
+          title: "Nofify", description: "Service started");
+    }
+
+    setState(() {
+      started.value = true;
+      loading.value = false;
+    });
+  }
+
+  void stopListening() async {
+    print("stop listening");
+
+    setState(() {
+      loading.value = true;
+    });
+
+    await NotificationsListener.stopService();
+
+    setState(() {
+      started.value = false;
+      loading.value = false;
+    });
+  }
+
 
   Future<bool> getData() async {
     await Future<dynamic>.delayed(const Duration(milliseconds: 0));

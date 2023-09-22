@@ -13,7 +13,7 @@ import 'package:notify2/services/local_notification.dart';
 
 ValueNotifier<List<NotificationEvent>> log = ValueNotifier([]);
 ValueNotifier<bool> started = ValueNotifier(false);
-ValueNotifier<bool> _loading = ValueNotifier(false);
+ValueNotifier<bool> loading = ValueNotifier(false);
 
 ReceivePort port = ReceivePort();
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -31,7 +31,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
 
   @override
   void initState() {
-    initPlatformState();
+    // initPlatformState();
     super.initState();
   }
 
@@ -101,7 +101,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
   void startListening() async {
     print("start listening");
     setState(() {
-      _loading.value = true;
+      loading.value = true;
     });
 
     bool? hasPermission = await NotificationsListener.hasPermission;
@@ -120,7 +120,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
 
     setState(() {
       started.value = true;
-      _loading.value = false;
+      loading.value = false;
     });
   }
 
@@ -128,14 +128,14 @@ class _ChatsScreenState extends State<ChatsScreen> {
     print("stop listening");
 
     setState(() {
-      _loading.value = true;
+      loading.value = true;
     });
 
     await NotificationsListener.stopService();
 
     setState(() {
       started.value = false;
-      _loading.value = false;
+      loading.value = false;
     });
   }
 
@@ -152,13 +152,13 @@ class _ChatsScreenState extends State<ChatsScreen> {
             style: TextStyle(letterSpacing: 8, fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
-          actions: [PopupMenu()],      
+          actions: [ PopupMenu()],      
         ),
-        body: MessageScreen(),
+        body: const MessageScreen(),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: started.value ? stopListening : startListening,
           tooltip: 'Start/Stop sensing',
-          label: _loading.value
+          label: loading.value
               ? const Text("Stop service") //Close
               : (started.value
                   ? const Text("Stop service")
@@ -208,7 +208,7 @@ class PopupMenu extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => KeyScreen(),
+              builder: (context) => const KeyScreen(),
             ));
       } else if (value == 1) {
         print("Settings menu is selected.");
