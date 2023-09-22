@@ -1,8 +1,6 @@
-import 'dart:io';
+
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:notify2/boxes.dart';
 import 'package:notify2/model/notification.dart';
 import 'package:notify2/pages/navigation_home_screen.dart';
@@ -31,22 +29,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.dark,
-      statusBarBrightness:
-          !kIsWeb && Platform.isAndroid ? Brightness.dark : Brightness.light,
-      systemNavigationBarColor: Colors.white,
-      systemNavigationBarDividerColor: Colors.transparent,
-      systemNavigationBarIconBrightness: Brightness.dark,
-    ));
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    //   statusBarColor: Colors.transparent,
+    //   statusBarIconBrightness: Brightness.dark,
+    //   statusBarBrightness:
+    //       !kIsWeb && Platform.isAndroid ? Brightness.dark : Brightness.light,
+    //   systemNavigationBarColor: Colors.white,
+    //   systemNavigationBarDividerColor: Colors.transparent,
+    //   systemNavigationBarIconBrightness: Brightness.dark,
+    // ));
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        // textTheme: GoogleFonts.,
-        // platform: TargetPlatform.iOS,
         useMaterial3: true
       ),
       home: NavigationHomeScreen(),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notify2/pages/home_screen.dart';
 import 'package:notify2/pages/navigation_home_screen.dart';
 
 class Back extends StatelessWidget {

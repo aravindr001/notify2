@@ -59,9 +59,16 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                         } else {
                           return GridView(
                             padding: const EdgeInsets.only(
-                                top: 0, left: 12, right: 12),
+                                top: 0, left: 20, right: 20),
                             physics: const BouncingScrollPhysics(),
                             scrollDirection: Axis.vertical,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              mainAxisSpacing: 12.0,
+                              crossAxisSpacing: 12.0,
+                              childAspectRatio: 1.5,
+                            ),
                             children: List<Widget>.generate(
                               homeList.length,
                               (int index) {
@@ -90,13 +97,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                   },
                                 );
                               },
-                            ),
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 1,
-                              mainAxisSpacing: 12.0,
-                              crossAxisSpacing: 12.0,
-                              childAspectRatio: 1.5,
                             ),
                           );
                         }
@@ -127,10 +127,10 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               height: AppBar().preferredSize.height - 8,
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 4),
+                padding: EdgeInsets.only(top: 4),
                 child: Text(
                   'Notify.AI',
                   style: TextStyle(
@@ -147,7 +147,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             height: AppBar().preferredSize.height,
             width: AppBar().preferredSize.height - 8,
           )
-        
         ],
       ),
     );
@@ -183,25 +182,35 @@ class HomeListView extends StatelessWidget {
               children: <Widget>[
                 ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(18.0)),
-                  child: Container(
-                    height: 170,
-                    width: 265,
-                    decoration: const BoxDecoration(color: Color.fromARGB(255, 234, 176, 242)),
-                  ),
+                  child: Stack(alignment: Alignment.bottomCenter, children: [
+                    Container(
+                      height: 170,
+                      width: 280,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 234, 176, 242)),
+                      child: const Padding(
+                        padding:  EdgeInsets.only(
+                          bottom: 0,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      child: Image.asset(
+                        listData!.imagePath,
+                        fit: BoxFit.cover,
+                        height: 110,
+                      ),
+                    ),
+                  ]),
                 ),
                 Positioned(
-                  bottom: 35, 
-                  child: Image.asset(
-                    listData!.imagePath,
-                    fit: BoxFit.cover,
-                    height: 110,
-                  ),
-                ),
-                Positioned(
-                  top: 55,
+                  top: 50,
                   child: Text(
                     listData!.name,
-                    style: const TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.black),
+                    style: const TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                 ),
                 Material(

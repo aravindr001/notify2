@@ -15,7 +15,6 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 String currentModel = "ft:gpt-3.5-turbo-0613:personal:noti:81T2Yydj";
 
-
 class PdfScreen extends StatefulWidget {
   PdfScreen({super.key});
 
@@ -34,8 +33,12 @@ class _PdfScreenState extends State<PdfScreen> {
 
   File? fileToDisplay;
 
+  bool summerize = false;
 
-
+  @override
+  void initState() {
+    super.initState();
+  }
 
   void pickFile() async {
     try {
@@ -43,9 +46,9 @@ class _PdfScreenState extends State<PdfScreen> {
         isLoading = true;
       });
 
-      result = await FilePicker.platform.pickFiles(
+      summerize = false;
 
-      );
+      result = await FilePicker.platform.pickFiles();
 
       if (result != null) {
         fileName = result!.files.first.name;
@@ -63,20 +66,19 @@ class _PdfScreenState extends State<PdfScreen> {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
       home: Scaffold(
         appBar: AppBar(
-          leading: const Back(),
-          centerTitle: true,
+            leading: const Back(),
+            centerTitle: true,
             title: const Text(
-          'AI PDF SUMMARIZER',
-          style: TextStyle(fontSize: 19, letterSpacing: 3),
-        )),
+              'AI PDF SUMMARIZER',
+              style: TextStyle(fontSize: 19, letterSpacing: 3),
+            )),
         body: isLoading
             ? const SizedBox()
             : Column(
@@ -92,15 +94,62 @@ class _PdfScreenState extends State<PdfScreen> {
                     )),
                   if (result != null)
                     Expanded(
-                          // child: Image.file(fileToDisplay!),
-                        child : Column(
-                          children: [
-                            Expanded(child: SfPdfViewer.file(fileToDisplay!)),
-                            ElevatedButton(onPressed: (){
-                              
-                            }, child: Text('SUMMARIZE'))
-                          ],
-                        ),
+                      child: summerize
+                          ? FutureBuilder<String>(
+                              future: getPDFtext(pickedFile!.path.toString()),
+                              builder: (context, snapshot) {
+                                if (snapshot.hasData) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(20),
+                                    child: SingleChildScrollView(
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            snapshot.data.toString(),
+                                            style:
+                                                const TextStyle(fontSize: 20),
+                                          ),
+                                          const SizedBox(
+                                            width: double.infinity,
+                                            height: 50,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                } else if (snapshot.hasError) {
+                                  return const Text('');
+                                }
+                                return const Loading();
+                              },
+                            )
+                          : Column(
+                              children: [
+                                Expanded(
+                                  flex: 10,
+                                    child: SfPdfViewer.file(fileToDisplay!)),
+                                Expanded(
+                                  flex:  1,
+                                  child: ElevatedButton(
+                                    style: ButtonStyle(
+                                      backgroundColor: MaterialStateProperty.all<Color>(
+                                                  const Color.fromARGB(255, 233, 217, 252))
+                                      // padding:,
+                                    ),
+                                      onPressed: () {
+                                        setState(() {
+                                          summerize = true;
+                                        });
+                                      },
+                                      child: const Text(
+                                        'SUMMARIZE',
+                                        style: TextStyle(letterSpacing: 1,
+                                        fontSize: 20
+                                        ),
+                                      )),
+                                )
+                              ],
+                            ),
                       // child:FutureBuilder<String>(
                       //   future: getPDFtext(pickedFile!.path.toString()),
                       //   builder: (context, snapshot) {
@@ -137,6 +186,30 @@ class _PdfScreenState extends State<PdfScreen> {
   }
 }
 
+class PdfView extends StatelessWidget {
+  const PdfView({
+    super.key,
+    required this.fileToDisplay,
+  });
+
+  final File? fileToDisplay;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Expanded(child: SfPdfViewer.file(fileToDisplay!)),
+        ElevatedButton(
+            onPressed: () {},
+            child: const Text(
+              'SUMMARIZE',
+              style: TextStyle(letterSpacing: 1),
+            ))
+      ],
+    );
+  }
+}
+
 class Loading extends StatefulWidget {
   const Loading({super.key});
 
@@ -148,9 +221,10 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: LottieBuilder.asset(AssetsManager.loading,
-      height: 200 ,)
-    );
+        child: LottieBuilder.asset(
+      AssetsManager.loading,
+      height: 200,
+    ));
   }
 }
 
@@ -171,48 +245,46 @@ Future<String> getPDFtext(String path) async {
 }
 
 Future<List<ChatModel>> sendMessageGPT(
-      {required String message, required String modelId}) async {
-    try {
-      log("modelId $modelId");
-      var response = await http.post(
-        Uri.parse("$BASE_URL/chat/completions"),
-        headers: {
-          'Authorization': 'Bearer $API_KEY',
-          "Content-Type": "application/json"
+    {required String message, required String modelId}) async {
+  try {
+    log("modelId $modelId");
+    var response = await http.post(
+      Uri.parse("$BASE_URL/chat/completions"),
+      headers: {
+        'Authorization': 'Bearer $API_KEY',
+        "Content-Type": "application/json"
+      },
+      body: jsonEncode(
+        {
+          "model": modelId,
+          "messages": [
+            {
+              "role": "user",
+              "content": message,
+            }
+          ]
         },
-        body: jsonEncode(
-          {
-            "model": modelId,
-            "messages": [
-              {
-                "role": "user",
-                "content": message,
-              }
-            ]
-          },
+      ),
+    );
+
+    Map jsonResponse = json.decode(utf8.decode(response.bodyBytes));
+    if (jsonResponse['error'] != null) {
+      throw HttpException(jsonResponse['error']["message"]);
+    }
+    List<ChatModel> chatList = [];
+    if (jsonResponse["choices"].length > 0) {
+      chatList = List.generate(
+        jsonResponse["choices"].length,
+        (index) => ChatModel(
+          msg: jsonResponse["choices"][index]["message"]["content"],
+          chatIndex: 1,
         ),
       );
-
-      Map jsonResponse = json.decode(utf8.decode(response.bodyBytes));
-      if (jsonResponse['error'] != null) {
-        throw HttpException(jsonResponse['error']["message"]);
-      }
-      List<ChatModel> chatList = [];
-      if (jsonResponse["choices"].length > 0) {
-        chatList = List.generate(
-          jsonResponse["choices"].length,
-          (index) => ChatModel(
-            msg: jsonResponse["choices"][index]["message"]["content"],
-            chatIndex: 1,
-          ),
-        );
-      }
-      // print(chatList[0].msg);
-      return chatList;
-    } catch (error) {
-      log("error $error");
-      rethrow;
     }
+    // print(chatList[0].msg);
+    return chatList;
+  } catch (error) {
+    log("error $error");
+    rethrow;
   }
-
-
+}
