@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:developer';
-
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +10,8 @@ import 'package:notify2/constants/api_consts.dart';
 import 'package:notify2/widgets/backwidget.dart';
 import 'package:read_pdf_text/read_pdf_text.dart';
 import 'package:http/http.dart' as http;
+import 'package:notify2/services/assets_manager.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 String currentModel = "ft:gpt-3.5-turbo-0613:personal::81CJDQxQ";
 
@@ -33,6 +33,9 @@ class _PdfScreenState extends State<PdfScreen> {
   bool isLoading = false;
 
   File? fileToDisplay;
+
+
+
 
   void pickFile() async {
     try {
@@ -75,7 +78,7 @@ class _PdfScreenState extends State<PdfScreen> {
           style: TextStyle(fontSize: 19, letterSpacing: 3),
         )),
         body: isLoading
-            ? const Loading()
+            ? const SizedBox()
             : Column(
                 children: [
                   if (result == null)
@@ -89,16 +92,23 @@ class _PdfScreenState extends State<PdfScreen> {
                     )),
                   if (result != null)
                     Expanded(
-                      child:
                           // child: Image.file(fileToDisplay!),
-                          // SfPdfViewer.file(fileToDisplay!),
-                          FutureBuilder<String>(
+                          // child : SfPdfViewer.file(fileToDisplay!),
+                      child:FutureBuilder<String>(
                         future: getPDFtext(pickedFile!.path.toString()),
                         builder: (context, snapshot) {
                           if (snapshot.hasData) {
-                            return Text(snapshot.data.toString());
+                            return Padding(
+                              padding: EdgeInsets.all(20),
+                              child: SingleChildScrollView(
+                                child: Text(snapshot.data.toString(),
+                                  style: TextStyle(
+                                    fontSize: 30
+                                  ),),
+                              ),
+                              );
                           } else if (snapshot.hasError) {
-                            return Text('');
+                            return const Text('');
                           }
                           return const Loading();
                         },
@@ -106,7 +116,6 @@ class _PdfScreenState extends State<PdfScreen> {
                     ),
                 ],
               ),
-    
         floatingActionButton: FloatingActionButton(
           onPressed: pickFile,
           child: const Icon(Icons.add),
@@ -127,7 +136,7 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: LottieBuilder.asset('assets/animation/Animation - 1695312393349.json')
+      child: LottieBuilder.asset(AssetsManager.loading)
     );
   }
 }
@@ -171,15 +180,12 @@ Future<List<ChatModel>> sendMessageGPT(
         ),
       );
 
-      // Map jsonResponse = jsonDecode(response.body);
       Map jsonResponse = json.decode(utf8.decode(response.bodyBytes));
       if (jsonResponse['error'] != null) {
-        // print("jsonResponse['error'] ${jsonResponse['error']["message"]}");
         throw HttpException(jsonResponse['error']["message"]);
       }
       List<ChatModel> chatList = [];
       if (jsonResponse["choices"].length > 0) {
-        // log("jsonResponse[choices]text ${jsonResponse["choices"][0]["text"]}");
         chatList = List.generate(
           jsonResponse["choices"].length,
           (index) => ChatModel(
@@ -195,3 +201,5 @@ Future<List<ChatModel>> sendMessageGPT(
       rethrow;
     }
   }
+
+

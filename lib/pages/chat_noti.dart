@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'package:notify2/pages/home_screen.dart';
 import 'package:notify2/providers/chats_provider.dart';
 import 'package:notify2/widgets/backwidget.dart';
 import 'package:notify2/widgets/chat_widget.dart';
@@ -38,7 +37,7 @@ class _ChatScreenState extends State<ChatScreen> {
     super.dispose();
   }
 
-  // List<ChatModel> chatList = [];
+
   @override
   Widget build(BuildContext context) {
     final modelsProvider = Provider.of<ModelsProvider>(context);
@@ -47,9 +46,9 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         leading: const Back(),
         backgroundColor: const Color.fromARGB(215, 239, 239, 239),
-        elevation: 0,
+        elevation: 1,
         centerTitle: true,
-        title: const Text("Notify",
+        title: const Text("Notify.AI",
         style: TextStyle(
           color: Colors.black,
           letterSpacing: 6
@@ -77,45 +76,52 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             if (_isTyping) ...[
               const SpinKitThreeBounce(
-                color: Colors.purpleAccent,
+                color: Color.fromARGB(255, 0, 0, 0),
                 size: 18,
               ),
             ],
             const SizedBox(
               height: 15,
             ),
-            Material(
-              // color: cardColor,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        focusNode: focusNode,
-                        style: const TextStyle(color: Color.fromARGB(255, 3, 3, 3)),
-                        controller: textEditingController,
-                        onSubmitted: (value) async {
-                          await sendMessageFCT(
-                              modelsProvider: modelsProvider,
-                              chatProvider: chatProvider);
-                        },
-                        decoration: const InputDecoration.collapsed(
-                            hintText: "How can I help you",
-                            hintStyle: TextStyle(color: Color.fromARGB(255, 121, 121, 121))),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Material(
+                borderRadius: const BorderRadiusDirectional.all(Radius.circular(10)),
+                color: const Color.fromARGB(255, 129, 129, 129),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          cursorHeight: 15,
+                          cursorColor: Colors.amber,
+                          focusNode: focusNode,
+                          style: const TextStyle(color: Color.fromARGB(255, 255, 255, 255),),
+                          controller: textEditingController,
+                          onSubmitted: (value) async {
+                            await sendMessageFCT(
+                                modelsProvider: modelsProvider,
+                                chatProvider: chatProvider);
+                          },
+                          decoration: const InputDecoration.collapsed(
+                              hintText: "How can I help you..",
+                              hintStyle: TextStyle(color: Color.fromARGB(255, 246, 246, 246))),
+                        ),
                       ),
-                    ),
-                    IconButton(
-                        onPressed: () async {
-                          await sendMessageFCT(
-                              modelsProvider: modelsProvider,
-                              chatProvider: chatProvider);
-                        },
-                        icon: const Icon(
-                          Icons.send,
-                          color: Color.fromARGB(255, 57, 57, 57),
-                        ))
-                  ],
+                      IconButton(
+                          onPressed: () async {
+                            await sendMessageFCT(
+                                modelsProvider: modelsProvider,
+                                chatProvider: chatProvider);
+                          },
+                          icon: const Icon(
+                            size: 26 ,
+                            Icons.send,
+                            color: Color.fromARGB(255, 255, 254, 254),
+                          ))
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -168,10 +174,6 @@ class _ChatScreenState extends State<ChatScreen> {
       });
       await chatProvider.sendMessageAndGetAnswers(
           msg: msg, chosenModelId: modelsProvider.getCurrentModel);
-      // chatList.addAll(await ApiService.sendMessage(
-      //   message: textEditingController.text,
-      //   modelId: modelsProvider.getCurrentModel,
-      // ));
       setState(() {});
     } catch (error) {
       log("error $error");
