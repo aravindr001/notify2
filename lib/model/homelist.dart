@@ -17,7 +17,7 @@ class HomeList {
   static List<HomeList> homeList = [
     HomeList(
       imagePath: 'assets/images/homescreen/noti.png',
-      name : 'NOTI',
+      name : 'NOTI GEN AI',
       navigateScreen: ChatBot(),
         ),
     HomeList(
@@ -27,7 +27,7 @@ class HomeList {
     ),
     HomeList(
       imagePath: 'assets/images/homescreen/chatnotify.png',
-      name : 'CHAT NOTIFY',
+      name : 'NOTIFIER',
       navigateScreen: ChatsScreen(),
     ),
   ];
