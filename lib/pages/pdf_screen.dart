@@ -13,7 +13,7 @@ import 'package:http/http.dart' as http;
 import 'package:notify2/services/assets_manager.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-String currentModel = "ft:gpt-3.5-turbo-0613:personal::81CJDQxQ";
+String currentModel = "ft:gpt-3.5-turbo-0613:personal:noti:81T2Yydj";
 
 
 class PdfScreen extends StatefulWidget {
@@ -93,26 +93,38 @@ class _PdfScreenState extends State<PdfScreen> {
                   if (result != null)
                     Expanded(
                           // child: Image.file(fileToDisplay!),
-                          // child : SfPdfViewer.file(fileToDisplay!),
-                      child:FutureBuilder<String>(
-                        future: getPDFtext(pickedFile!.path.toString()),
-                        builder: (context, snapshot) {
-                          if (snapshot.hasData) {
-                            return Padding(
-                              padding: EdgeInsets.all(20),
-                              child: SingleChildScrollView(
-                                child: Text(snapshot.data.toString(),
-                                  style: TextStyle(
-                                    fontSize: 30
-                                  ),),
-                              ),
-                              );
-                          } else if (snapshot.hasError) {
-                            return const Text('');
-                          }
-                          return const Loading();
-                        },
-                      ),
+                        child : Column(
+                          children: [
+                            Expanded(child: SfPdfViewer.file(fileToDisplay!)),
+                            ElevatedButton(onPressed: (){
+                              
+                            }, child: Text('SUMMARIZE'))
+                          ],
+                        ),
+                      // child:FutureBuilder<String>(
+                      //   future: getPDFtext(pickedFile!.path.toString()),
+                      //   builder: (context, snapshot) {
+                      //     if (snapshot.hasData) {
+                      //       return Padding(
+                      //         padding: const EdgeInsets.all(20),
+                      //         child: SingleChildScrollView(
+                      //           child: Column(
+                      //             children: [
+                      //               Text(snapshot.data.toString(),
+                      //                 style: const TextStyle(
+                      //                   fontSize: 20
+                      //                 ),),
+                      //                 const SizedBox(width: double.infinity,height: 50,)
+                      //             ],
+                      //           ),
+                      //         ),
+                      //         );
+                      //     } else if (snapshot.hasError) {
+                      //       return const Text('');
+                      //     }
+                      //     return const Loading();
+                      //   },
+                      // ),
                     ),
                 ],
               ),
@@ -136,7 +148,8 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: LottieBuilder.asset(AssetsManager.loading)
+      child: LottieBuilder.asset(AssetsManager.loading,
+      height: 200 ,)
     );
   }
 }
