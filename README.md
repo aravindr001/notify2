@@ -215,7 +215,7 @@ This should install all the dependencies of the app
 - Boot your `Android emulator` or connect an `Android device`
 - Run it in `Run without debug` mode
 
-<h3>Make sure the above are satisfied</h3>
+<h4>Make sure the above are satisfied</h4>
 
 
 
