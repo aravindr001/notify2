@@ -160,7 +160,7 @@ So what our app does is fairly simple, you enter the topic you want to learn and
 Please ensure you have the following dependencies installed on your Android phone:
 
 `- ℹ️ Flutter`
-<br>
+<br><br>
 install: https://docs.flutter.dev/get-started/install
 <be>
 Video resources:
