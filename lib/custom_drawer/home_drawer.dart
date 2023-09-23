@@ -50,8 +50,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    // var brightness = MediaQuery.of(context).platformBrightness;
-    // bool isLightMode = brightness == Brightness.light;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Column(
@@ -88,16 +86,13 @@ class _HomeDrawerState extends State<HomeDrawer> {
                               shape: BoxShape.circle,
                               boxShadow: <BoxShadow>[
                                 BoxShadow(
-                                    color: Color.fromARGB(0, 255, 255, 255).withOpacity(0.6),
+                                    color:const Color.fromARGB(0, 255, 255, 255).withOpacity(0.6),
                                     // offset: const Offset(2.0, 4.0),
                                     blurRadius: 8),
                               ],
                             ),
                             child: ClipRRect(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(60.0)),
-                              // child: Image.asset('assets/images/userImage.png'),
-                              child: Image.asset('assets/images/logo.png'),
+                              child: Image.asset('assets/images/spaced logo.png'),
                             ),
                           ),
                         ),
@@ -105,7 +100,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                     },
                   ),
                   const Padding(
-                    padding: const EdgeInsets.only(top: 8, left: 4),
+                    padding: EdgeInsets.only(top: 8, left: 4),
                     child: Text(
                       'N O T I F Y  .  A I',
                       style: TextStyle(
@@ -143,7 +138,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
           Column(
             children: <Widget>[
               ListTile(
-                title: Icon(
+                title: const Icon(
                   Icons.power_settings_new,
                   color: Colors.red,
                 ),
@@ -224,14 +219,14 @@ class _HomeDrawerState extends State<HomeDrawer> {
                             0.0,
                             0.0),
                         child: Padding(
-                          padding: EdgeInsets.only(top: 8, bottom: 8),
+                          padding: const EdgeInsets.only(top: 8, bottom: 8),
                           child: Container(
                             width:
                                 MediaQuery.of(context).size.width * 0.75 - 64,
                             height: 46,
                             decoration: BoxDecoration(
                               color: Colors.blue.withOpacity(0.2),
-                              borderRadius: new BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(0),
                                 topRight: Radius.circular(28),
                                 bottomLeft: Radius.circular(0),

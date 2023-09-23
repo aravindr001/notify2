@@ -5,6 +5,7 @@ import 'package:notify2/boxes.dart';
 class MessageScreen extends StatelessWidget {
   const MessageScreen({super.key});
 
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20, left: 8, right: 8),
@@ -14,7 +15,7 @@ class MessageScreen extends StatelessWidget {
                 reverse: true,
                 itemBuilder: (BuildContext context, int idx) {
                   final entry = notifications.getAt(idx);
-                  print(entry);
+
                   return Card(
                     child: ListTile(
                       titleAlignment: ListTileTitleAlignment.bottom,

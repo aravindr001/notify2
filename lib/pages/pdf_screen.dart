@@ -55,7 +55,6 @@ class _PdfScreenState extends State<PdfScreen> {
         pickedFile = result!.files.first;
         fileToDisplay = File(pickedFile!.path.toString());
 
-        print('file name $fileToDisplay');
       }
 
       setState(() {
