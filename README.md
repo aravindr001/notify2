@@ -14,6 +14,7 @@
 </div>
 
 
+
 ---
 
 ## 📖 Table of Contents
@@ -216,7 +217,9 @@ This should install all the dependencies of the app
 - Click the link given below copy the `API_KEY` and paste it into the `lib/constants/api_consts.dart`
 <br><br>
 https://docs.google.com/document/d/1QOp8X-W0gesv_nGYzxq6JIYLqcRZSusJmJ-Ib1G6A-Q/edit?usp=sharing
+<br><br>
 
+<img width="1280" alt="Screenshot 2023-09-23 at 5 37 12 PM" src="https://github.com/aravindr001/notify2/assets/120251962/eb910ea7-2242-4f9e-997d-7d184c217b55">
 
 - Go to the lib/main.dart
   <br><br><br><br>
