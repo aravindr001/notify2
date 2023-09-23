@@ -55,7 +55,10 @@ So what our app does is fairly simple, you enter the topic you want to learn and
 
 ## 📦 Features
 
-HTTPStatus Exception: 429
+● Smart learning through Generative Ai
+● PDF summarising using Ai
+● Customised Message Notifier
+
 
 ---
 
