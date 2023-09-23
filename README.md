@@ -185,7 +185,7 @@ cd notify2
 ```sh
 git clone https://github.com/aravindr001/flutter_notification_listener.git
 ```
-![Alt Text]([Image URL](https://drive.google.com/file/u/1/d/14K8RERSUTl1AyOQ0eJanIS6cmT7T9eAf/view?usp=drive))
+![Alt Text]([Image URL](assets/images/logo.png))
 
 
 4. You should add the path of the cloned
