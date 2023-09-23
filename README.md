@@ -3,7 +3,7 @@
 <img src="assets/images/logo.png" width="100" />
 <br>Notify.AI
 </h1>
-<h3>◦ Stay informed, code with pride</h3>
+<h3>◦ Keeps you ahead!</h3>
 <h3>◦ Developed with the software and tools below.</h3>
 
 <p align="center">
@@ -46,7 +46,10 @@
 
 ## 📍 Overview
 
-HTTPStatus Exception: 429
+
+Our project involved us to get familiar with the Android Development environment and thus develop an application to solve the following problem.
+In today's busy world, we often lose track of time. As students ourselves, we often struggle with wasting our time in learning things that do not produce any outcome. We wanted to do something about this by addressing the issue and providing an innovative solution. As a result, we came up with the idea of creating a mobile application that helps us keep track of time and also assist in learning by filtering key points using generative AI.
+So what our app does is fairly simple, you enter the topic you want to learn and our Generative ai model gives the most filtered out key points for you which makes the learning process fast and simple.Insert the PDFs you want to summarise, our ai model summarise the content and results in the summary in 1-2 lines.
 
 ---
 
