@@ -24,7 +24,7 @@
 - [⚙️ Modules](#modules)
 - [🚀 Getting Started](#-getting-started)
     - [🔧 Installation](#-installation)
-    - [🤖 Running Notify.AI](#-running-notify2)
+    - [🤖 Running Notify.AI](#-running-notify.ai)
     - [🧪 Tests](#-tests)
 - [🛣 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
@@ -209,7 +209,6 @@ This should install all the dependencies of the app
 
 - Go to the lib/main.dart
 - Boot your `Android emulator` or connect an `Android device`
-- 
 - Run it in `Run without debug` mode
 
 
