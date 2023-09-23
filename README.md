@@ -250,7 +250,7 @@ or clicking on the `Run without debug` option
 <img width="1280" alt="Screenshot 2023-09-23 at 3 54 30 PM" src="https://github.com/aravindr001/notify2/assets/120251962/0d417e2e-893f-46c0-be7d-60fa32631c69">
 <br><br><br><br>
 
-<h4>If sure the above are satisfied you will be welcomed with our splash screen</h4>
+<h4>If the above are satisfied you will be welcomed with our splash screen and our homescreen</h4>
 
 ![NOTIFY AI](https://github.com/aravindr001/notify2/assets/120251962/0c24bf5d-a0e3-473e-b26b-16e98d8e61c3)
 
