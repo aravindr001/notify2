@@ -160,6 +160,7 @@ So what our app does is fairly simple, you enter the topic you want to learn and
 Please ensure you have the following dependencies installed on your Android phone:
 
 `- ℹ️ Flutter`
+install: (https://docs.flutter.dev/get-started/install)
 
 `- ℹ️ Visual Studio Code`
 
