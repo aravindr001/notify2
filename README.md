@@ -219,7 +219,9 @@ This should install all the dependencies of the app
 https://docs.google.com/document/d/1QOp8X-W0gesv_nGYzxq6JIYLqcRZSusJmJ-Ib1G6A-Q/edit?usp=sharing
 <br><br>
 
-<img width="1280" alt="Screenshot 2023-09-23 at 5 37 12 PM" src="https://github.com/aravindr001/notify2/assets/120251962/eb910ea7-2242-4f9e-997d-7d184c217b55">
+
+<img width="1280" alt="Screenshot 2023-09-23 at 7 49 23 PM" src="https://github.com/aravindr001/notify2/assets/120251962/dec8375c-90cb-4190-a620-b1b2805957eb">
+
 
 - Go to the lib/main.dart
   <br><br><br><br>
