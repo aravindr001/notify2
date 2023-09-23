@@ -161,17 +161,20 @@ Please ensure you have the following dependencies installed on your Android phon
 
 `- ℹ️ Flutter`
 <br><br>
-install: https://docs.flutter.dev/get-started/install
-<be>
+Install: https://docs.flutter.dev/get-started/install
+<br>
 Video resources:
 - Windows: https://www.youtube.com/watch?v=75hqPk6pq5g
 - Mac Os: https://www.youtube.com/watch?v=bbJ6zJRxN_c
 
 `- ℹ️ Visual Studio Code`
+<br><br>
+Install: https://code.visualstudio.com/
+<br>
 
 `- ℹ️ Android simulator (or external Android device)`
-
-
+<br><br>
+https://www.youtube.com/watch?v=GhuiNcOEv1A
 ### 🔧 Installation
 
 1. Clone the repository:
