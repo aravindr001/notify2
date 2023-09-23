@@ -233,8 +233,8 @@ flutter run
 ```
 or clicking on the `Run without debug` option
 <br><br>
-<img width="640" alt="Screenshot 2023-09-23 at 3 53 35 PM" src="https://github.com/aravindr001/notify2/assets/120251962/ad10a67e-fa1f-439c-ae0e-9923c97cb3d3">
-<img width="640" alt="Screenshot 2023-09-23 at 3 54 30 PM" src="https://github.com/aravindr001/notify2/assets/120251962/0d417e2e-893f-46c0-be7d-60fa32631c69">
+<img width="1280" alt="Screenshot 2023-09-23 at 3 53 35 PM" src="https://github.com/aravindr001/notify2/assets/120251962/ad10a67e-fa1f-439c-ae0e-9923c97cb3d3">
+<img width="1280" alt="Screenshot 2023-09-23 at 3 54 30 PM" src="https://github.com/aravindr001/notify2/assets/120251962/0d417e2e-893f-46c0-be7d-60fa32631c69">
 
 
 
