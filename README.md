@@ -13,6 +13,7 @@
 
 </div>
 
+
 ---
 
 ## 📖 Table of Contents
@@ -163,7 +164,9 @@ So what our app does is fairly simple, you enter the topic you want to learn and
 
 Please ensure you have the following dependencies installed on your Android phone:
 
-`- ℹ️ flutter`
+`- ℹ️ Flutter`
+
+`- ℹ️ Visual Studio Code`
 
 `- ℹ️ Android simulator (or external Android device)`
 
@@ -180,32 +183,36 @@ git clone https://github.com/aravindr001/notify2
 cd notify2
 ```
 
-3. Download this repository locally on your system `flutter_notification_listener` using the repository given below:
+3. Download this repository locally on your system `flutter_notification_listener` using the repository given below:<br>
    Reason: The authorized repository has some bugs, so it was necessary to fork it and fix it.
 ```sh
 git clone https://github.com/aravindr001/flutter_notification_listener.git
 ```
-![Alt Text]([Image URL](assets/images/logo.png))
+<img width="1280" alt="Screenshot 2023-09-23 at 3 35 19 PM" src="https://github.com/aravindr001/notify2/assets/120251962/5edd3510-9b00-470d-8937-f28735b46599">
+
+You should replace the path of the flutter_notification_listener with your path
 
 
 4. You should add the path of the cloned
+```sh
+flutter_notification_listener:
+    path: <YOUR_PATH>
+```
 
-
-4. Install the dependencies:
+5. Install the dependencies:
 ```sh
 pub get
 ```
+This should install all the dependencies of the app
 
 ### 🤖 Running NOTIFY.AI
 
-```sh
-dart main.dart
-```
+- Go to the lib/main.dart
+- Boot your `Android emulator` or connect an `Android device`
+- 
+- Run it in `Run without debug` mode
 
-### 🧪 Tests
-```sh
-dart test
-```
+
 
 ---
 
