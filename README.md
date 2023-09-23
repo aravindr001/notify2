@@ -211,6 +211,10 @@ This should install all the dependencies of the app
 
 ### 🤖 Running NOTIFY.AI
 
+- To run you should add the <B>API_KEY</B> in the `lib/constants/api_consts.dart`. OpenAI doesn't allow us to share the API_KEY<br>
+    through any public platform. So we are sharing the API key in a docs file
+      -Click the link given below copy the `API_KEY` and paste it into the `lib/constants/api_consts.dart`
+
 
 - Go to the lib/main.dart
   <br><br><br><br>
