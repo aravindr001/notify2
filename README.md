@@ -34,7 +34,7 @@
 
 Our project involved getting familiar with the Android Development environment and thus developing an application to solve the following problem.
 In today's busy world, we often lose track of time. As students ourselves, we often struggle with wasting our time in learning things that do not produce any outcome. We wanted to do something about this by addressing the issue and providing an innovative solution. As a result, we came up with the idea of creating a mobile application that helps us keep track of time and assist in learning by filtering key points using generative AI.
-So what our app does is fairly simple, you enter the topic you want to learn and our generative AI model gives the most filtered-out key points for you which makes the learning process fast and simple. Insert the PDFs you want to summarise, our AI model summarises the content and results in the summary in 1-2 lines. And in your app, you can ask questions to the fine-tuned AI model and get a response in a brief
+So what our app does is fairly simple, you enter the topic you want to learn and our generative AI model gives the most filtered-out key points for you which makes the learning process fast and simple. Insert the PDFs you want to summarise, our AI model summarises the content and results in the summary in 1-2 lines. And in your app, you can ask questions to the fine-tuned AI model and get a response in a brief. Finally, the app gives custom notifications as the user inputs keywords in the app the app triggers notifications according to the keywords which are provided by the user.
 
 ---
 
