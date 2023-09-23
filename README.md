@@ -8,7 +8,7 @@
 
 <p align="center">
 
-<img src="https://img.shields.io/badge/FLUTTER-000000.svg?style&logo=JSON&logoColor=white" alt="JSON" />
+<img src="https://img.shields.io/badge/FLUTTER-000000.svg?style&logo=FLUTTER&logoColor=white" alt="JSON" />
 </p>
 <img src="https://img.shields.io/github/languages/top/aravindr001/notify2?style&color=5D6D7E" alt="GitHub top language" />
 <img src="https://img.shields.io/github/languages/code-size/aravindr001/notify2?style&color=5D6D7E" alt="GitHub code size in bytes" />
