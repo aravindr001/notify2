@@ -107,8 +107,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     bool? isR = await NotificationsListener.isRunning;
 
     if (isR == false) {
-      await NotificationsListener.startService(
-          title: "Nofify", description: "Service started");
+      await NotificationsListener.startService();
     }
 
     setState(() {

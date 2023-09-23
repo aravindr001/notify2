@@ -110,7 +110,8 @@ class _ChatsScreenState extends State<ChatsScreen> {
 
     if (isR == false) {
       await NotificationsListener.startService(
-          title: "Nofify", description: "Service started");
+        showWhen: true
+      );
     }
 
     setState(() {

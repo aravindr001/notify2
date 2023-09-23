@@ -4,7 +4,7 @@ class LocalNotification {
   static Future initialize(
       FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin) async {
     var androidInitilize =
-        const AndroidInitializationSettings('mipmap/ic_launcher');
+        const AndroidInitializationSettings('@mipmap/launcher_icon');
 
     DarwinInitializationSettings initializationSettingsDarwin =
         const DarwinInitializationSettings();
