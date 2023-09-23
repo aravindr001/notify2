@@ -37,11 +37,6 @@ class _ChatsScreenState extends State<ChatsScreen> {
 
   // we must use static method, to handle in background
   static void _callback(NotificationEvent evt) {
-    // HANDLING BACKGROUND NOTIFICATIONS :
-    print('GETTING INFO ');
-    print(evt.packageName); // PACKAGE USE TO SEND MESSAGE :
-    print(evt.text); // MESSAGE CONTENT  :
-    print(evt.title);
 
     final SendPort? send = IsolateNameServer.lookupPortByName("_listener_");
     if (send == null) print("can't find the sender");
@@ -148,11 +143,11 @@ class _ChatsScreenState extends State<ChatsScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'NOTIFY',
+            'NOTIFIER',
             style: TextStyle(letterSpacing: 8, fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
-          actions: [ PopupMenu()],      
+          actions: const [PopupMenu()],      
         ),
         body: const MessageScreen(),
         floatingActionButton: FloatingActionButton.extended(

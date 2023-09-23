@@ -1,10 +1,7 @@
-
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:notify2/boxes.dart';
 import 'package:notify2/model/notification.dart';
-import 'package:notify2/pages/navigation_home_screen.dart';
 import 'package:notify2/pages/splash_screen.dart';
 
 import 'package:permission_handler/permission_handler.dart';

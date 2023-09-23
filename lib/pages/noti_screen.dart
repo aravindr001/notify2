@@ -48,7 +48,7 @@ class _ChatScreenState extends State<ChatScreen> {
         backgroundColor: const Color.fromARGB(215, 239, 239, 239),
         elevation: 1,
         centerTitle: true,
-        title: const Text("Notify.AI",
+        title: const Text("NOTI GEN AI",
         style: TextStyle(
           color: Colors.black,
           letterSpacing: 6

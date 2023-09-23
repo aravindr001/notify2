@@ -51,8 +51,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     IsolateNameServer.registerPortWithName(port.sendPort, "_listener_");
     port.listen((message) => onData(message));
 
-    // don't use the default receivePort
-    // NotificationsListener.receivePort.listen((evt) => onData(evt));
 
     bool? isR = await NotificationsListener.isRunning;
     print("""Service is ${isR == false ? "not " : ""}aleary running""");
@@ -246,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               child: Padding(
                 padding: EdgeInsets.only(top: 4),
                 child: Text(
-                  'Notify.AI',
+                  'NOTIFY.AI',
                   style: TextStyle(
                     letterSpacing: 8,
                     fontSize: 22,

@@ -76,7 +76,7 @@ class _PdfScreenState extends State<PdfScreen> {
             leading: const Back(),
             centerTitle: true,
             title: const Text(
-              'AI PDF SUMMARIZER',
+              'AI PDF ASSIST',
               style: TextStyle(fontSize: 19, letterSpacing: 3),
             )),
         body: isLoading
