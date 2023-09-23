@@ -214,7 +214,7 @@ This should install all the dependencies of the app
 
 - Go to the lib/main.dart
   <br><br>
-- <img width="1280" alt="Screenshot 2023-09-23 at 3 52 04 PM" src="https://github.com/aravindr001/notify2/assets/120251962/c2a16104-e33f-4360-a5b8-bcbec5822bda">
+  <img width="1280" alt="Screenshot 2023-09-23 at 3 52 04 PM" src="https://github.com/aravindr001/notify2/assets/120251962/c2a16104-e33f-4360-a5b8-bcbec5822bda">
   
 - Boot your `Android emulator` or connect an `Android device`
   <br><br>
@@ -227,9 +227,15 @@ This should install all the dependencies of the app
 <img width="1280" alt="Screenshot 2023-09-23 at 4 00 10 PM" src="https://github.com/aravindr001/notify2/assets/120251962/6cb7593a-c125-4fd5-b0ee-4a125dafff89">
 
 
-- Boot your `Android emulator` or connect an `Android device`
-  <br><br>
-<img width="1280" alt="Screenshot 2023-09-23 at 4 00 05 PM" src="https://github.com/aravindr001/notify2/assets/120251962/882b402a-040f-4ffd-a97e-77c1d159af02">
+- Now run the app by using the command
+```sh
+flutter run
+```
+or clicking on the `Run without debug` option
+<br><br>
+<img width="640" alt="Screenshot 2023-09-23 at 3 53 35 PM" src="https://github.com/aravindr001/notify2/assets/120251962/ad10a67e-fa1f-439c-ae0e-9923c97cb3d3">
+<img width="640" alt="Screenshot 2023-09-23 at 3 54 30 PM" src="https://github.com/aravindr001/notify2/assets/120251962/0d417e2e-893f-46c0-be7d-60fa32631c69">
+
 
 
 <h4>Make sure the above are satisfied</h4>
