@@ -24,7 +24,7 @@
 - [⚙️ Modules](#modules)
 - [🚀 Getting Started](#-getting-started)
     - [🔧 Installation](#-installation)
-    - [🤖 Running Notify.AI](#-running-notify.ai)
+    - [🤖 Running Notify.AI](#-running-notify-ai)
     - [🧪 Tests](#-tests)
 - [🛣 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
