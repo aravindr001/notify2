@@ -214,9 +214,3 @@ This should install all the dependencies of the app
 
 
 
-
-## 👏 Acknowledgments
-
-`- ℹ️ List any resources, contributors, inspiration, etc.`
-
----
