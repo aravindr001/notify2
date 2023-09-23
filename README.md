@@ -7,16 +7,8 @@
 <h3>◦ Developed with the software and tools below.</h3>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Swift-F05138.svg?style&logo=Swift&logoColor=white" alt="Swift" />
-<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style&logo=HTML5&logoColor=white" alt="HTML5" />
-<img src="https://img.shields.io/badge/C-A8B9CC.svg?style&logo=C&logoColor=black" alt="C" />
-<img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style&logo=Kotlin&logoColor=white" alt="Kotlin" />
-<img src="https://img.shields.io/badge/CMake-064F8C.svg?style&logo=CMake&logoColor=white" alt="CMake" />
 
-<img src="https://img.shields.io/badge/Gradle-02303A.svg?style&logo=Gradle&logoColor=white" alt="Gradle" />
-<img src="https://img.shields.io/badge/Dart-0175C2.svg?style&logo=Dart&logoColor=white" alt="Dart" />
-<img src="https://img.shields.io/badge/Markdown-000000.svg?style&logo=Markdown&logoColor=white" alt="Markdown" />
-<img src="https://img.shields.io/badge/JSON-000000.svg?style&logo=JSON&logoColor=white" alt="JSON" />
+<img src="https://img.shields.io/badge/FLUTTER-000000.svg?style&logo=JSON&logoColor=white" alt="JSON" />
 </p>
 <img src="https://img.shields.io/github/languages/top/aravindr001/notify2?style&color=5D6D7E" alt="GitHub top language" />
 <img src="https://img.shields.io/github/languages/code-size/aravindr001/notify2?style&color=5D6D7E" alt="GitHub code size in bytes" />
@@ -34,7 +26,7 @@
 - [⚙️ Modules](#modules)
 - [🚀 Getting Started](#-getting-started)
     - [🔧 Installation](#-installation)
-    - [🤖 Running notify2](#-running-notify2)
+    - [🤖 Running Notify.AI](#-running-notify2)
     - [🧪 Tests](#-tests)
 - [🛣 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
@@ -249,7 +241,7 @@ Please ensure you have the following dependencies installed on your Android phon
 
 ### 🔧 Installation
 
-1. Clone the notify2 repository:
+1. Clone the repository:
 ```sh
 git clone https://github.com/aravindr001/notify2
 ```
@@ -270,7 +262,7 @@ git clone https://github.com/aravindr001/flutter_notification_listener.git
 pub get
 ```
 
-### 🤖 Running notify2
+### 🤖 Running NOTIFY.AI
 
 ```sh
 dart main.dart
