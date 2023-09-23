@@ -181,11 +181,11 @@ cd notify2
 ```
 
 3. Download this repository locally on your system `flutter_notification_listener` using the repository given below:
-   Reason: The authorized repository has some bugs, so it was necessory to fork it and fix it.
+   Reason: The authorized repository has some bugs, so it was necessary to fork it and fix it.
 ```sh
 git clone https://github.com/aravindr001/flutter_notification_listener.git
 ```
-![Alt Text]([Image URL](https://drive.google.com/file/u/1/d/14K8RERSUTl1AyOQ0eJanIS6cmT7T9eAf/view?usp=drive_open))
+![Alt Text]([Image URL](https://drive.google.com/file/u/1/d/14K8RERSUTl1AyOQ0eJanIS6cmT7T9eAf/view?usp=drive))
 
 
 4. You should add the path of the cloned
