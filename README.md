@@ -174,7 +174,7 @@ Install: https://code.visualstudio.com/
 
 `- ℹ️ Android simulator (or external Android device)`
 <br><br>
-https://www.youtube.com/watch?v=GhuiNcOEv1A
+Video resources: https://www.youtube.com/watch?v=GhuiNcOEv1A
 ### 🔧 Installation
 
 1. Clone the repository:
@@ -211,11 +211,11 @@ This should install all the dependencies of the app
 
 ### 🤖 Running NOTIFY.AI
 
-<a name="-running-notify-ai"></a>
-
 - Go to the lib/main.dart
 - Boot your `Android emulator` or connect an `Android device`
 - Run it in `Run without debug` mode
+
+<h3>Make sure the above are satisfied</h3>
 
 
 
