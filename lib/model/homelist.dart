@@ -18,7 +18,7 @@ class HomeList {
     HomeList(
       imagePath: 'assets/images/homescreen/noti.png',
       name : 'NOTI GEN AI',
-      navigateScreen: ChatBot(),
+      navigateScreen: const ChatBot(),
         ),
     HomeList(
         imagePath: 'assets/images/homescreen/aipdfassist.png',
@@ -28,7 +28,7 @@ class HomeList {
     HomeList(
       imagePath: 'assets/images/homescreen/chatnotify.png',
       name : 'NOTIFIER',
-      navigateScreen: ChatsScreen(),
+      navigateScreen: const ChatsScreen(),
     ),
   ];
 }

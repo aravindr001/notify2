@@ -51,6 +51,8 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^23.1.36
 
 dev_dependencies:
+  # flutter_app_name: ^0.1.1
+  # flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
@@ -93,3 +95,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
+
+
+flutter_app_name:
+  name: "Notify.AI"

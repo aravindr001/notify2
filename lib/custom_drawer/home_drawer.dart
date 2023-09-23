@@ -37,7 +37,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
       ),
       DrawerList(
         index: DrawerIndex.Synonyms,
-        labelName: 'Synonyms',
+        labelName: 'Keywords',
         icon: const Icon(Icons.notification_important_outlined),
       ),
       DrawerList(

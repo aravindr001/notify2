@@ -147,7 +147,14 @@ class _ChatsScreenState extends State<ChatsScreen> {
             style: TextStyle(letterSpacing: 8, fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
-          actions: const [PopupMenu()],      
+          actions:  [
+            ElevatedButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const KeyScreen(),
+                      ));
+          }, child: const Text('Keywords'),)],      
         ),
         body: const MessageScreen(),
         floatingActionButton: FloatingActionButton.extended(
@@ -161,55 +168,5 @@ class _ChatsScreenState extends State<ChatsScreen> {
         ),
       ),
     );
-  }
-}
-
-// import 'package:flutter/material.dart';
-
-// class ChatsScreen extends StatelessWidget {
-//   const ChatsScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container();
-//   }
-// }
-
-class PopupMenu extends StatelessWidget {
-  const PopupMenu({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return PopupMenuButton(
-        // add icon, by default "3 dot" icon
-        // icon: Icon(Icons.book)
-        itemBuilder: (context) {
-      return const [
-        PopupMenuItem<int>(
-          value: 0,
-          child: Text("My Synonyms"),
-        ),
-        PopupMenuItem<int>(
-          value: 1,
-          child: Text("Settings"),
-        ),
-        PopupMenuItem<int>(
-          value: 2,
-          child: Text("Logout"),
-        ),
-      ];
-    }, onSelected: (value) {
-      if (value == 0) {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const KeyScreen(),
-            ));
-      } else if (value == 1) {
-        print("Settings menu is selected.");
-      } else if (value == 2) {
-        print("Logout menu is selected.");
-      }
-    });
   }
 }

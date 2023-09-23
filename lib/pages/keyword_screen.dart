@@ -10,7 +10,7 @@ class KeyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     
       return Scaffold(
-        appBar: AppBar(centerTitle: true,title: const Text('SYNONYMS',
+        appBar: AppBar(centerTitle: true,title: const Text('KEYWORDS',
           style: TextStyle(letterSpacing: 8),
         ),),
         body: Padding(
