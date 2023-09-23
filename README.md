@@ -69,151 +69,6 @@ HTTPStatus Exception: 429
 
 ## ⚙️ Modules
 
-<details closed><summary>Root</summary>
-
-| File                                                                                            | Summary                                                                                                                                                                                                                                                                             |
-| ---                                                                                             | ---                                                                                                                                                                                                                                                                                 |
-| [pubspec.yaml](https://github.com/aravindr001/notify2/blob/main/pubspec.yaml)                   | The code provided is a Flutter project called "notify2". It includes various dependencies for implementing features like animated splash screen, animated text, file picking, notifications, PDF viewing, and more. The project also contains assets such as images and animations. |
-| [analysis_options.yaml](https://github.com/aravindr001/notify2/blob/main/analysis_options.yaml) | This code configures the Dart analyzer, which checks for errors, warnings, and lints in Dart code. It includes recommended lints for Flutter apps and allows customization of lint rules.                                                                                           |
-| [pubspec.lock](https://github.com/aravindr001/notify2/blob/main/pubspec.lock)                   | HTTPStatus Exception: 400                                                                                                                                                                                                                                                           |
-| [.metadata](https://github.com/aravindr001/notify2/blob/main/.metadata)                         | This code file is used by the Flutter tool to track project properties and assist with upgrades. It includes version information, project type, and metadata for the flutter migrate command. It also allows for specifying files that should be ignored by the migrate tool.       |
-
-</details>
-
-<details closed><summary>Macos</summary>
-
-| File                                                                                | Summary                                                                                                                                                                                                                                                                                                                                                                  |
-| ---                                                                                 | ---                                                                                                                                                                                                                                                                                                                                                                      |
-| [Podfile](https://github.com/aravindr001/notify2/blob/main/macos/Podfile)           | This code sets up the configuration for a Flutter project to run on macOS. It includes the necessary setup for CocoaPods and integrates additional build settings.                                                                                                                                                                                                       |
-| [Podfile.lock](https://github.com/aravindr001/notify2/blob/main/macos/Podfile.lock) | This code relies on three pods: flutter_local_notifications, FlutterMacOS, and path_provider_foundation, which provide various functionalities. The code also lists the dependencies and external sources for each pod. The spec checksums and podfile checksum are included to track changes and ensure consistency. The CocoaPods version used in this code is 1.12.1. |
-
-</details>
-
-<details closed><summary>Runner.xcworkspace</summary>
-
-| File                                                                                                                           | Summary                                                                                                                                                                                                               |
-| ---                                                                                                                            | ---                                                                                                                                                                                                                   |
-| [contents.xcworkspacedata](https://github.com/aravindr001/notify2/blob/main/macos/Runner.xcworkspace/contents.xcworkspacedata) | This code provides a configuration file for an Xcode workspace. It references the main project and the Pods project, allowing for easy management of dependencies and project structure within the Xcode environment. |
-| [contents.xcworkspacedata](https://github.com/aravindr001/notify2/blob/main/ios/Runner.xcworkspace/contents.xcworkspacedata)   | This code is an XML file defining a workspace for an Xcode project. It references the location of the Runner.xcodeproj file within the group.                                                                         |
-
-</details>
-
-<details closed><summary>Xcshareddata</summary>
-
-| File                                                                                                                                                                | Summary                                                                                                                                                                                                                                          |
-| ---                                                                                                                                                                 | ---                                                                                                                                                                                                                                              |
-| [IDEWorkspaceChecks.plist](https://github.com/aravindr001/notify2/blob/main/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist)                         | This code is an XML property list file that sets the "IDEDidComputeMac32BitWarning" key to true, indicating that Xcode should issue a warning about 32-bit compatibility.                                                                        |
-| [IDEWorkspaceChecks.plist](https://github.com/aravindr001/notify2/blob/main/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist)       | This code is an XML file that includes a property list format used by Apple. It sets a specific key, "IDEDidComputeMac32BitWarning", to a boolean value of true, indicating that a Mac computer has computed a warning for 32-bit compatibility. |
-| [WorkspaceSettings.xcsettings](https://github.com/aravindr001/notify2/blob/main/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings)                   | This code is an XML file that represents a property list (plist) with a single key-value pair. The key "PreviewsEnabled" is set to "false", indicating that previews are disabled.                                                               |
-| [IDEWorkspaceChecks.plist](https://github.com/aravindr001/notify2/blob/main/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist)                           | This code is an XML plist file that sets the IDEDidComputeMac32BitWarning key to true in a dictionary. It likely enables a warning or notification related to macOS 32-bit compatibility in an integrated development environment (IDE).         |
-| [WorkspaceSettings.xcsettings](https://github.com/aravindr001/notify2/blob/main/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings) | This code is an XML file that defines a property list (plist). Its main functionality is to disable previews, as indicated by the "PreviewsEnabled" key being set to "false".                                                                    |
-| [IDEWorkspaceChecks.plist](https://github.com/aravindr001/notify2/blob/main/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist)         | The code defines a property list (XML) file that sets a flag to enable a warning for computing in 32-bit mode in the Apple IDE.                                                                                                                  |
-
-</details>
-
-<details closed><summary>Runner</summary>
-
-| File                                                                                                                 | Summary                                                                                                                                                                                                                                                                                                                                                                            |
-| ---                                                                                                                  | ---                                                                                                                                                                                                                                                                                                                                                                                |
-| [Release.entitlements](https://github.com/aravindr001/notify2/blob/main/macos/Runner/Release.entitlements)           | This code is an XML property list file with a sandbox configuration for an Apple application. It indicates that the application is running in a secured sandbox environment provided by Apple, which restricts access to certain resources for security purposes.                                                                                                                  |
-| [MainFlutterWindow.swift](https://github.com/aravindr001/notify2/blob/main/macos/Runner/MainFlutterWindow.swift)     | This code defines a custom NSWindow subclass that initializes a FlutterViewController and sets it as the content view controller of the window. It also registers any generated plugins with the FlutterViewController.                                                                                                                                                            |
-| [Info.plist](https://github.com/aravindr001/notify2/blob/main/macos/Runner/Info.plist)                               | This code is an XML document that represents the information about the application's bundle and settings. It includes details such as application name, version, icon file, required macOS version, and copyright information. This file is crucial for configuring the application's properties and behavior.                                                                     |
-| [AppDelegate.swift](https://github.com/aravindr001/notify2/blob/main/macos/Runner/AppDelegate.swift)                 | This code defines an app delegate subclass that manages the macOS application lifecycle. It includes a function that determines if the application should automatically quit when its last window is closed.                                                                                                                                                                       |
-| [DebugProfile.entitlements](https://github.com/aravindr001/notify2/blob/main/macos/Runner/DebugProfile.entitlements) | This code is an XML file that defines a set of security-related settings on an Apple macOS system. It enables app sandboxing, allows just-in-time compilation, and permits network server connections for the specific application.                                                                                                                                                |
-| [flutter_window.h](https://github.com/aravindr001/notify2/blob/main/windows/runner/flutter_window.h)                 | The code defines a FlutterWindow class that serves as a host for a Flutter view in a Win32 environment. It creates and manages a FlutterViewController instance, which represents the Flutter app running inside the Win32 window. The DartProject object specifies the Flutter project to run. The class handles window creation, destruction, and message handling.              |
-| [utils.h](https://github.com/aravindr001/notify2/blob/main/windows/runner/utils.h)                                   | This code defines three utility functions: 1. CreateAndAttachConsole() creates a console and redirects stdout and stderr to it.2. Utf8FromUtf16() takes a null-terminated UTF-16 string and returns the corresponding UTF-8 string.3. GetCommandLineArguments() returns the command line arguments as a vector of UTF-8 strings.                                                   |
-| [win32_window.cpp](https://github.com/aravindr001/notify2/blob/main/windows/runner/win32_window.cpp)                 | This code defines a Win32 window class and provides functionalities for creating, showing, and managing Win32 windows. It also supports dark mode window decorations and handles window messages.                                                                                                                                                                                  |
-| [win32_window.h](https://github.com/aravindr001/notify2/blob/main/windows/runner/win32_window.h)                     | The code defines a class, `Win32Window`, which represents a high DPI-aware window in a Win32 application. It provides functions for creating, showing, and destroying the window, as well as handling window messages. It also allows customization for handling specific events and properties of the window.                                                                     |
-| [CMakeLists.txt](https://github.com/aravindr001/notify2/blob/main/windows/runner/CMakeLists.txt)                     | This code sets up a C++ project that uses Flutter for building a Windows application. It includes necessary dependencies, compiles source files, applies build settings, and incorporates Flutter tools for the build process.                                                                                                                                                     |
-| [runner.exe.manifest](https://github.com/aravindr001/notify2/blob/main/windows/runner/runner.exe.manifest)           | This code defines a manifest file that provides compatibility settings for an application. It specifies the DPI awareness level and lists supported operating systems, including Windows 7 through 11, ensuring proper rendering on different Windows versions. The manifest helps the application adapt to different DPI settings and remain compatible across Windows platforms. |
-| [main.cpp](https://github.com/aravindr001/notify2/blob/main/windows/runner/main.cpp)                                 | This code initializes a Flutter project and creates a Win32 window. It handles the main message loop for the window and ensures proper initialization and cleanup of COM objects. The code also sets up console attachment for debugging purposes.                                                                                                                                 |
-| [utils.cpp](https://github.com/aravindr001/notify2/blob/main/windows/runner/utils.cpp)                               | This code provides functions for creating and attaching a console window, retrieving command line arguments, and converting UTF-16 strings to UTF-8. It utilizes Windows API functions and Flutter desktop integration to ensure compatibility and efficient execution.                                                                                                            |
-| [resource.h](https://github.com/aravindr001/notify2/blob/main/windows/runner/resource.h)                             | This code contains resource definitions for an application, including an icon. It also defines default values for new objects like resources and controls. The code is generated by Microsoft Visual C++ and is used to configure and manage resources in the application.                                                                                                         |
-| [flutter_window.cpp](https://github.com/aravindr001/notify2/blob/main/windows/runner/flutter_window.cpp)             | This code initializes a Flutter window by creating a FlutterViewController and registering plugins. It handles window messages and ensures the window is shown.                                                                                                                                                                                                                    |
-| [Runner.rc](https://github.com/aravindr001/notify2/blob/main/windows/runner/Runner.rc)                               | This code is part of a Microsoft Visual C++ resource script and defines various resources for an application. It includes definitions for icons, version information, and other resource strings. The code is organized to support multiple languages, with English (United States) resources included in this example.                                                            |
-| [Info.plist](https://github.com/aravindr001/notify2/blob/main/ios/Runner/Info.plist)                                 | This code is an XML property list file used in iOS app development. It defines various settings for the app, such as its display name, executable, bundle identifier, version, and supported orientations. It also includes settings for the launch and main storyboards and enables certain features like CADisplayLink frame duration and indirect input events.                 |
-| [AppDelegate.swift](https://github.com/aravindr001/notify2/blob/main/ios/Runner/AppDelegate.swift)                   | This code is responsible for integrating Flutter with UIKit. It sets up the Flutter framework's plugins and initializes the Flutter app within the UIKit environment during the iOS app launch.                                                                                                                                                                                    |
-| [Runner-Bridging-Header.h](https://github.com/aravindr001/notify2/blob/main/ios/Runner/Runner-Bridging-Header.h)     | The code is importing the necessary plugin registrations to enable the use of generated plugins in the application. This functionality allows for the seamless integration of external modules or features into the codebase, increasing versatility and enhancing the overall capabilities of the application.                                                                    |
-
-</details>
-
-<details closed><summary>Base.lproj</summary>
-
-| File                                                                                                                      | Summary                                                                                                                                                                                                                                                                                            |
-| ---                                                                                                                       | ---                                                                                                                                                                                                                                                                                                |
-| [MainMenu.xib](https://github.com/aravindr001/notify2/blob/main/macos/Runner/Base.lproj/MainMenu.xib)                     | HTTPStatus Exception: 400                                                                                                                                                                                                                                                                          |
-| [LaunchScreen.storyboard](https://github.com/aravindr001/notify2/blob/main/ios/Runner/Base.lproj/LaunchScreen.storyboard) | This code is an XML file that represents a storyboard, specifically for an iOS app. It defines a view controller with a background image and sets up constraints for the image's position on the screen. The image itself is referenced from a resource bundle included in the app.                |
-| [Main.storyboard](https://github.com/aravindr001/notify2/blob/main/ios/Runner/Base.lproj/Main.storyboard)                 | This code is an XML document representing a storyboard file in the iOS development environment. It defines a single scene with a FlutterViewController and sets its initial properties, including its frame and background color. The code is used for visual layout and navigation in an iOS app. |
-
-</details>
-
-<details closed><summary>Configs</summary>
-
-| File                                                                                                         | Summary                                                                                                                                                                                                                                                 |
-| ---                                                                                                          | ---                                                                                                                                                                                                                                                     |
-| [Release.xcconfig](https://github.com/aravindr001/notify2/blob/main/macos/Runner/Configs/Release.xcconfig)   | The code includes external configurations for Flutter and warnings. Its primary purpose is to provide precise and concise settings for the Flutter project, while also ensuring that appropriate warning settings are applied during the build process. |
-| [AppInfo.xcconfig](https://github.com/aravindr001/notify2/blob/main/macos/Runner/Configs/AppInfo.xcconfig)   | This code snippet defines application-level settings for the Runner target in a Flutter project. It includes the application's name, bundle identifier, and copyright information.                                                                      |
-| [Debug.xcconfig](https://github.com/aravindr001/notify2/blob/main/macos/Runner/Configs/Debug.xcconfig)       | The code includes Flutter debugging configuration settings and custom warning configuration settings.                                                                                                                                                   |
-| [Warnings.xcconfig](https://github.com/aravindr001/notify2/blob/main/macos/Runner/Configs/Warnings.xcconfig) | The code includes various compiler flags and warning options to enforce strict coding practices and catch potential issues during compilation. This helps improve code quality and prevent bugs and errors.                                             |
-
-</details>
-
-<details closed><summary>Flutter</summary>
-
-| File                                                                                                                              | Summary                                                                                                                                                                                                                                                            |
-| ---                                                                                                                               | ---                                                                                                                                                                                                                                                                |
-| [GeneratedPluginRegistrant.swift](https://github.com/aravindr001/notify2/blob/main/macos/Flutter/GeneratedPluginRegistrant.swift) | This code imports and registers multiple plugins for a Flutter macOS project. These plugins provide functionalities like device information, local notifications, file path handling, PDF viewing, and URL launching.                                              |
-| [Flutter-Release.xcconfig](https://github.com/aravindr001/notify2/blob/main/macos/Flutter/Flutter-Release.xcconfig)               | The code includes external configuration files for supporting and running the Flutter runner. It ensures proper integration and settings for the Flutter project in the iOS Xcode environment.                                                                     |
-| [Flutter-Debug.xcconfig](https://github.com/aravindr001/notify2/blob/main/macos/Flutter/Flutter-Debug.xcconfig)                   | This code utilizes configuration files to support targeting a specific module in a complex iOS project, ensuring accurate debugging and generating Flutter-based content efficiently.                                                                              |
-| [generated_plugin_registrant.h](https://github.com/aravindr001/notify2/blob/main/linux/flutter/generated_plugin_registrant.h)     | This code generates a header file that provides a function for registering Flutter plugins with the Flutter engine on Linux.                                                                                                                                       |
-| [generated_plugin_registrant.cc](https://github.com/aravindr001/notify2/blob/main/linux/flutter/generated_plugin_registrant.cc)   | This code generates a registration file for a plugin in a Flutter application. It imports the necessary plugin files and registers the UrlLauncherPlugin with the Flutter plugin registry.                                                                         |
-| [CMakeLists.txt](https://github.com/aravindr001/notify2/blob/main/linux/flutter/CMakeLists.txt)                                   | This code is responsible for handling the build steps for a Flutter project on Linux. It sets system dependencies, includes the Flutter library, and defines target dependencies.                                                                                  |
-| [generated_plugins.cmake](https://github.com/aravindr001/notify2/blob/main/linux/flutter/generated_plugins.cmake)                 | This code is designed to facilitate the integration of Flutter plugins in a Linux environment. It dynamically adds plugin libraries to the project, sets up necessary dependencies, and bundles them for implementation.                                           |
-| [generated_plugin_registrant.h](https://github.com/aravindr001/notify2/blob/main/windows/flutter/generated_plugin_registrant.h)   | This code generates a plugin registrant file for Flutter, which is responsible for registering all the plugins used in a Flutter application. It uses a PluginRegistry object to register the plugins.                                                             |
-| [generated_plugin_registrant.cc](https://github.com/aravindr001/notify2/blob/main/windows/flutter/generated_plugin_registrant.cc) | This code is responsible for registering and initializing three plugins: PermissionHandlerWindowsPlugin, SyncfusionPdfviewerWindowsPlugin, and UrlLauncherWindows. It ensures that the plugins are properly connected to the Flutter framework for use in Windows. |
-| [CMakeLists.txt](https://github.com/aravindr001/notify2/blob/main/windows/flutter/CMakeLists.txt)                                 | This code performs the build steps required for Flutter development on Windows. It includes the configuration, defines the Flutter library and wrapper, and sets up the Flutter tool backend for building and assembling the project.                              |
-| [generated_plugins.cmake](https://github.com/aravindr001/notify2/blob/main/windows/flutter/generated_plugins.cmake)               | This code section lists and includes Windows plugins for a Flutter project. It also adds necessary libraries and targets for the plugins. The code allows seamless integration of these plugins into the Flutter application.                                      |
-| [Release.xcconfig](https://github.com/aravindr001/notify2/blob/main/ios/Flutter/Release.xcconfig)                                 | The code includes requisite support files for the Pods in the Runner project, as well as an additional Generated.xcconfig file.                                                                                                                                    |
-| [Debug.xcconfig](https://github.com/aravindr001/notify2/blob/main/ios/Flutter/Debug.xcconfig)                                     | These code lines include configuration files for supporting targets and debugging in a specific Pod setup, ensuring compatibility and providing necessary settings for the Runner project.                                                                         |
-| [AppFrameworkInfo.plist](https://github.com/aravindr001/notify2/blob/main/ios/Flutter/AppFrameworkInfo.plist)                     | This code is an XML Property List file that contains metadata about an iOS app, including its bundle identifier, version number, minimum required OS version, and other information needed for app deployment and execution on iOS devices.                        |
-
-</details>
-
-<details closed><summary>Runnertests</summary>
-
-| File                                                                                                      | Summary                                                                                                                                                                                                                                                                                      |
-| ---                                                                                                       | ---                                                                                                                                                                                                                                                                                          |
-| [RunnerTests.swift](https://github.com/aravindr001/notify2/blob/main/macos/RunnerTests/RunnerTests.swift) | The code is a placeholder for writing tests for the Runner application in Flutter for macOS using XCTest. The testExample() function is intended for adding tests to validate the functionality of the Runner application. It serves as a starting point to write tests for the application. |
-| [RunnerTests.swift](https://github.com/aravindr001/notify2/blob/main/ios/RunnerTests/RunnerTests.swift)   | This code defines a unit test class in Swift for the Runner application in Flutter. It includes a single example test case for now. These tests ensure the reliability and functionality of the application.                                                                                 |
-
-</details>
-
-<details closed><summary>Runner.xcodeproj</summary>
-
-| File                                                                                                       | Summary                   |
-| ---                                                                                                        | ---                       |
-| [project.pbxproj](https://github.com/aravindr001/notify2/blob/main/macos/Runner.xcodeproj/project.pbxproj) | HTTPStatus Exception: 400 |
-| [project.pbxproj](https://github.com/aravindr001/notify2/blob/main/ios/Runner.xcodeproj/project.pbxproj)   | HTTPStatus Exception: 400 |
-
-</details>
-
-<details closed><summary>Xcschemes</summary>
-
-| File                                                                                                                              | Summary                                                                                                                                                                                                                                                                |
-| ---                                                                                                                               | ---                                                                                                                                                                                                                                                                    |
-| [Runner.xcscheme](https://github.com/aravindr001/notify2/blob/main/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme) | The code defines a scheme for building, testing, profiling, analyzing, and archiving an Xcode project. It specifies the buildable references, build configurations, and launch settings.                                                                               |
-| [Runner.xcscheme](https://github.com/aravindr001/notify2/blob/main/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme)   | This code represents an Xcode scheme file that defines build, test, launch, profile, analyze, and archive actions for an iOS project called "Runner." The file specifies build configurations, references to buildable products, and various settings for each action. |
-
-</details>
-
-<details closed><summary>Web</summary>
-
-| File                                                                          | Summary                                                                                                                                                                                    |
-| ---                                                                           | ---                                                                                                                                                                                        |
-| [index.html](https://github.com/aravindr001/notify2/blob/main/web/index.html) | This code is an HTML template for a Flutter project. It sets the base href for the app, includes necessary meta tags and icons for iOS, and initializes the Flutter engine to run the app. |
-
-</details>
-
 <details closed><summary>Lib</summary>
 
 | File                                                                                  | Summary                                                                                                                                                                                                                                                                                                                          |
@@ -381,11 +236,11 @@ HTTPStatus Exception: 429
 
 ***Dependencies***
 
-Please ensure you have the following dependencies installed on your system:
+Please ensure you have the following dependencies installed on your Android phone:
 
-`- ℹ️ Dependency 1`
+`- ℹ️ flutter`
 
-`- ℹ️ Dependency 2`
+`- ℹ️ Android simulator (or external Android device)`
 
 `- ℹ️ ...`
 
@@ -401,7 +256,13 @@ git clone https://github.com/aravindr001/notify2
 cd notify2
 ```
 
-3. Install the dependencies:
+3. Download another repository locally on your system:
+```sh
+git clone https://github.com/aravindr001/flutter_notification_listener.git
+```
+
+
+4. Install the dependencies:
 ```sh
 pub get
 ```
